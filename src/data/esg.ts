@@ -17,7 +17,7 @@ export const META = data.meta;
 export const all: CountryRecord[] = data.countries;
 export const YEAR_MIN = data.meta.yearMin;
 export const YEAR_MAX = data.meta.yearMax;
-export const NO_DATA = "#222a26";
+export const NO_DATA = "#2c352d"; // matches the --no-data design-handoff token
 
 // Merge the near-real-time overlay (generated hourly by scripts/build-live.mjs,
 // baked into the deployed build). Absent/empty in normal local builds.

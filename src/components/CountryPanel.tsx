@@ -98,7 +98,7 @@ export function CountryPanel({ rec, metric, scales, onClose, onPin, isPinned }: 
       {/* header */}
       <div style={{ position: "relative", padding: "20px 22px 16px", borderBottom: "1px solid var(--border)" }}>
         <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: tone }} />
-        <button onClick={onClose} style={{ position: "absolute", top: 16, right: 16, width: 30, height: 30, borderRadius: 7, border: "1px solid var(--border)", background: "var(--panel-2)", color: "var(--text-2)", display: "grid", placeItems: "center" }}>
+        <button aria-label={`Close ${rec.name} panel`} onClick={onClose} style={{ position: "absolute", top: 16, right: 16, width: 30, height: 30, borderRadius: 7, border: "1px solid var(--border)", background: "var(--panel-2)", color: "var(--text-2)", display: "grid", placeItems: "center" }}>
           <Icon name="close" size={15} />
         </button>
         <div style={{ display: "flex", alignItems: "center", gap: 9, marginBottom: 10 }}>

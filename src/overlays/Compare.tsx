@@ -38,7 +38,7 @@ export function CompareOverlay({ pinned, scales, onClose, onRemove }: {
 
   const Col = ({ c, tone }: { c: CountryRecord; tone: string }) => (
     <div style={{ flex: 1, textAlign: "center", position: "relative" }}>
-      <button onClick={() => onRemove(c)} style={{ position: "absolute", top: -4, right: 0, width: 24, height: 24, borderRadius: 6, border: "1px solid var(--border)", background: "var(--panel-2)", color: "var(--text-3)", display: "grid", placeItems: "center" }}><Icon name="close" size={12} /></button>
+      <button aria-label={`Remove ${c.name} from comparison`} onClick={() => onRemove(c)} style={{ position: "absolute", top: -4, right: 0, width: 24, height: 24, borderRadius: 6, border: "1px solid var(--border)", background: "var(--panel-2)", color: "var(--text-3)", display: "grid", placeItems: "center" }}><Icon name="close" size={12} /></button>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
         <span style={{ width: 10, height: 10, borderRadius: 3, background: tone }} />
         <div style={{ fontSize: 16, fontWeight: 600 }}>{c.name}</div>

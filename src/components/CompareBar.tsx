@@ -19,7 +19,7 @@ export function CompareBar({ pinned, onOpen, onClear }: {
         ))}
       </div>
       <button onClick={onOpen} disabled={pinned.length < 2} style={{ height: 32, padding: "0 14px", borderRadius: 8, border: "none", background: pinned.length < 2 ? "var(--elev)" : "var(--accent)", color: pinned.length < 2 ? "var(--text-3)" : "#08120c", fontSize: 12.5, fontWeight: 600 }}>Compare</button>
-      <button onClick={onClear} style={{ width: 32, height: 32, borderRadius: 8, border: "1px solid var(--border)", background: "transparent", color: "var(--text-3)", display: "grid", placeItems: "center" }}><Icon name="close" size={14} /></button>
+      <button aria-label="Clear comparison" onClick={onClear} style={{ width: 32, height: 32, borderRadius: 8, border: "1px solid var(--border)", background: "transparent", color: "var(--text-3)", display: "grid", placeItems: "center" }}><Icon name="close" size={14} /></button>
     </div>
   );
 }

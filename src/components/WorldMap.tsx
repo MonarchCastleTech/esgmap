@@ -211,7 +211,15 @@ export function WorldMap(props: WorldMapProps) {
       })
       .catch((err) => { console.error("topojson load failed", err); if (!cancelled) setStatus("error"); });
 
-    return () => { cancelled = true; };
+    // Idempotent teardown: under StrictMode the effect runs mount→cleanup→mount, so
+    // remove any appended geometry and detach svg listeners rather than relying on
+    // fetch timing to avoid double-built paths / stacked handlers.
+    return () => {
+      cancelled = true;
+      if (gRef.current) select(gRef.current).selectAll("*").remove();
+      if (svgRef.current) select(svgRef.current).on(".zoom", null).on("click", null);
+      selByName.current = {};
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -252,12 +260,15 @@ export function WorldMap(props: WorldMapProps) {
       .call(zoomRef.current!.transform, target);
     // safety net for throttled rAF (backgrounded tab): snap to target.
     const svgNode = svgRef.current!;
-    setTimeout(() => {
+    const safety = setTimeout(() => {
       const cur = (svgNode as unknown as { __zoom?: { k: number } }).__zoom;
       if (!cur || Math.abs(cur.k - scale) > 0.02) {
         select(svgNode).call(zoomRef.current!.transform, target);
       }
     }, 820);
+    // Clear the pending snap if flyTo changes again (rapid selections) or on unmount,
+    // so a stale target can't jump the map after the user has navigated elsewhere.
+    return () => clearTimeout(safety);
   }, [flyTo, status]);
 
   const zoomBy = (k: number) => {
@@ -285,11 +296,11 @@ export function WorldMap(props: WorldMapProps) {
       {/* zoom controls */}
       <div style={{ position: "absolute", top: 18, right: 18, display: "flex", flexDirection: "column", gap: 8 }}>
         <div style={{ display: "flex", flexDirection: "column", background: "var(--panel)", border: "1px solid var(--border)", borderRadius: 10, overflow: "hidden", boxShadow: "var(--shadow)" }}>
-          <button onClick={() => zoomBy(1.5)} style={ZBTN}><Icon name="plus" size={17} /></button>
+          <button aria-label="Zoom in" onClick={() => zoomBy(1.5)} style={ZBTN}><Icon name="plus" size={17} /></button>
           <div style={{ height: 1, background: "var(--border)" }} />
-          <button onClick={() => zoomBy(1 / 1.5)} style={ZBTN}><Icon name="minus" size={17} /></button>
+          <button aria-label="Zoom out" onClick={() => zoomBy(1 / 1.5)} style={ZBTN}><Icon name="minus" size={17} /></button>
         </div>
-        <button onClick={resetZoom} title="Reset view" style={{ ...ZBTN, border: "1px solid var(--border)", borderRadius: 10, background: "var(--panel)", boxShadow: "var(--shadow)" }}><Icon name="globe" size={17} /></button>
+        <button aria-label="Reset view" onClick={resetZoom} title="Reset view" style={{ ...ZBTN, border: "1px solid var(--border)", borderRadius: 10, background: "var(--panel)", boxShadow: "var(--shadow)" }}><Icon name="globe" size={17} /></button>
       </div>
 
       {/* tooltip */}

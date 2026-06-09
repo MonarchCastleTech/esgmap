@@ -212,10 +212,12 @@ const SCORE_WEIGHTS = { renew: 0.3, carbon: 0.25, co2: 0.2, disclosure: 0.15, cl
 
 function disclosureSubScore(meta) {
   if (meta.tier !== "rich") return null; // policy detail curated for major economies only
-  const parisMap = { ratified: 1, mandatory: 1, signed: 0.5, consulting: 0.5, none: 0 };
+  const parisMap = { ratified: 1, signed: 0.5, withdrawn: 0, none: 0 };
   const ifrsMap = { mandatory: 1, adopting: 0.8, roadmap: 0.5, consulting: 0.3, none: 0 };
   const paris = parisMap[meta.paris] ?? 0;
-  const netZero = meta.netZero ? 1 : 0;
+  // Graded by target-year ambition: a 2035 pledge ≈ full credit, a 2075 pledge ≈ none,
+  // so an early net-zero date scores higher than a distant one (no pledge → 0).
+  const netZero = meta.netZero == null ? 0 : clamp((2075 - meta.netZero) / (2075 - 2035), 0, 1);
   const ifrs = ((ifrsMap[meta.ifrsS1] ?? 0) + (ifrsMap[meta.ifrsS2] ?? 0)) / 2;
   return 100 * (0.34 * paris + 0.33 * netZero + 0.33 * ifrs);
 }

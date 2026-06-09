@@ -10,10 +10,10 @@
  *   EIA  (api.eia.gov v2 RTO)          → United States             EIA_KEY
  *   ENTSO-E (web-api.tp.entsoe.eu)     → ~European single-zone TSOs ENTSOE_TOKEN
  *
- * Multi-bidding-zone countries (Norway, Sweden, Denmark, Italy macro-zones)
- * are intentionally omitted — country-level generation can't be read from a
- * single ENTSO-E domain without zone aggregation — so they keep their annual
- * value and are labelled "annual". Coverage can be widened later.
+ * Multi-bidding-zone countries (Norway, Sweden, Denmark) ARE covered by summing
+ * their price-zone domains (see the arrays in ENTSOE_DOMAINS). Isolated grids with
+ * no ENTSO-E feed (e.g. Iceland) keep their annual value and are labelled "annual".
+ * Coverage can be widened later.
  */
 
 // ENTSO-E control-area / country EIC domains that report "actual generation per

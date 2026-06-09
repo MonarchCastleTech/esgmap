@@ -20,7 +20,7 @@ to **GitHub Pages** as a fully static site.
 - **D3 world map** — `geoMercator`, full-bleed, latitude-clipped to kill polar smear, zoom/pan,
   hover tooltips, click-to-select with fly-to that centres on a country's **largest landmass**.
 - **Time slider** scrubs the 2000→latest history for the renewable and carbon layers.
-- **Self-hosted geometry & data** — no third-party runtime calls; one JS bundle + one GeoJSON.
+- **Self-hosted geometry & data** — no third-party runtime data calls; one JS bundle + one TopoJSON (decoded to GeoJSON at runtime).
 
 ## Tech stack
 

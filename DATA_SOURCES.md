@@ -68,7 +68,7 @@ weighted blend of normalised sub-scores, renormalised over whichever are availab
 | 30% | Clean-power share | renewable % (0–100) |
 | 25% | Grid carbon | `100 × (1 − min(carbon / 800, 1))` |
 | 20% | CO₂ per capita | `100 × (1 − min(co2pc / 25, 1))` |
-| 15% | Disclosure readiness | blend of Paris ratification, net-zero pledge, IFRS S1/S2 (rich tier only) |
+| 15% | Disclosure readiness | blend of Paris ratification, net-zero pledge **graded by target year** (2035 ≈ full, 2075 ≈ none), IFRS S1/S2 (rich tier only) |
 | 10% | Climate risk | `100 − climate` |
 
 The exact weights live in `scripts/build-data.mjs` (`SCORE_WEIGHTS`) and are surfaced in the

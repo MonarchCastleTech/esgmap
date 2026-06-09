@@ -38,6 +38,16 @@ async function fetchText(url, opts = {}) {
   return await res.text();
 }
 const round1 = (v) => Math.round(v * 10) / 10;
+const clampPct = (v) => Math.max(0, Math.min(100, v));
+
+// Normalise an ENTSO-E <end> ("2026-06-09T13:00Z") or a compact "yyyymmddHHMM"
+// to a full ISO instant so the UI's new Date(at) always parses.
+function isoMinuteZ(s) {
+  if (!s) return null;
+  if (/^\d{12}$/.test(s)) return `${s.slice(0, 4)}-${s.slice(4, 6)}-${s.slice(6, 8)}T${s.slice(8, 10)}:${s.slice(10, 12)}:00Z`;
+  const m = s.match(/^(\d{4}-\d\d-\d\d)T(\d\d:\d\d)(?::\d\d)?Z$/);
+  return m ? `${m[1]}T${m[2]}:00Z` : s;
+}
 
 // ---- ESO (UK) — no key -----------------------------------------------------
 async function fetchEso() {
@@ -49,7 +59,7 @@ async function fetchEso() {
     const ci = JSON.parse(await fetchText("https://api.carbonintensity.org.uk/intensity"));
     carbon = ci.data?.[0]?.intensity?.actual ?? ci.data?.[0]?.intensity?.forecast ?? null;
   } catch { /* carbon is optional */ }
-  return { renewable: round1(renew), carbon, carbonEstimated: false, source: "National Energy System Operator (UK)", at: gen.data.to };
+  return { renewable: round1(clampPct(renew)), carbon, carbonEstimated: false, source: "National Energy System Operator (UK)", at: gen.data.to };
 }
 
 // ---- EIA (US) — needs EIA_KEY ----------------------------------------------
@@ -72,7 +82,7 @@ async function fetchEia(key, respondent) {
   }
   if (total <= 0) throw new Error("EIA: zero total");
   return {
-    renewable: round1((renew / total) * 100),
+    renewable: round1(clampPct((renew / total) * 100)),
     carbon: Math.round(emis / total),
     carbonEstimated: true,
     source: "U.S. EIA Grid Monitor",
@@ -92,23 +102,37 @@ function entsoeWindow() {
   return { periodStart: fmt(start), periodEnd: fmt(now) };
 }
 
-// Sum the latest interval's quantity per PSR type from one zone's A75 XML.
-function entsoeByType(xml, acc = {}) {
+// Extract one coherent latest-interval snapshot per PSR type from a single zone's
+// A75 XML. ENTSO-E commonly returns MULTIPLE <TimeSeries> for the same psrType in
+// one response (per-day or curveType splits, or out-bidding-zone consumption). These
+// must NOT be summed — we keep, per psrType, the quantity from the TimeSeries whose
+// <Period> ends latest (and the highest position within it). Returns the freshest
+// snapshot for one zone; callers sum ACROSS zones, not across a zone's TimeSeries.
+export function entsoeByType(xml) {
+  const perPsr = {}; // psr -> { end, pos, qty }
+  let latestEnd = "";
   const series = xml.split("<TimeSeries>").slice(1);
   for (const ts of series) {
     const psr = (ts.match(/<psrType>([^<]+)<\/psrType>/) || [])[1];
     if (!psr) continue;
-    // collect points, keep the highest position (latest interval)
+    const end = (ts.match(/<timeInterval>[\s\S]*?<end>([^<]+)<\/end>[\s\S]*?<\/timeInterval>/) || [])[1] || "";
+    // highest-position (latest) point within this TimeSeries, parsed per <Point>
     let bestPos = -1, bestQty = null;
-    const pointRe = /<Point>\s*<position>(\d+)<\/position>\s*<quantity>([\d.]+)<\/quantity>/g;
-    let m;
-    while ((m = pointRe.exec(ts))) {
-      const pos = +m[1];
-      if (pos > bestPos) { bestPos = pos; bestQty = +m[2]; }
+    for (const pt of ts.split("<Point>").slice(1)) {
+      const pos = Number((pt.match(/<position>(\d+)<\/position>/) || [])[1]);
+      const qty = parseFloat((pt.match(/<quantity>([\d.eE+-]+)<\/quantity>/) || [])[1]);
+      if (Number.isFinite(pos) && Number.isFinite(qty) && pos > bestPos) { bestPos = pos; bestQty = qty; }
     }
-    if (bestQty != null) acc[psr] = (acc[psr] || 0) + bestQty;
+    if (bestQty == null) continue;
+    const cur = perPsr[psr];
+    if (!cur || end > cur.end || (end === cur.end && bestPos > cur.pos)) {
+      perPsr[psr] = { end, pos: bestPos, qty: bestQty };
+    }
+    if (end > latestEnd) latestEnd = end;
   }
-  return acc;
+  const byType = {};
+  for (const [psr, v] of Object.entries(perPsr)) byType[psr] = v.qty;
+  return { byType, latestEnd };
 }
 
 // Renewable share (%) + estimated grid carbon (gCO₂/kWh) from merged PSR totals.
@@ -121,14 +145,14 @@ export function computeEntsoe(byType) {
     emis += q * (ENTSOE_EMISSION[psr] ?? 700);
   }
   if (total <= 0) throw new Error("ENTSO-E: zero total");
-  return { renewable: round1((renew / total) * 100), carbon: Math.round(emis / total) };
+  return { renewable: round1(clampPct((renew / total) * 100)), carbon: Math.round(emis / total) };
 }
 
 async function fetchEntsoe(token, domain) {
   const domains = Array.isArray(domain) ? domain : [domain];
   const { periodStart, periodEnd } = entsoeWindow();
-  const byType = {};
-  let ok = 0;
+  const byType = {}; // summed ACROSS zones (each zone's snapshot deduped internally)
+  let ok = 0, latestEnd = "";
   for (const d of domains) {
     const url = `https://web-api.tp.entsoe.eu/api?securityToken=${token}`
       + `&documentType=A75&processType=A16&in_Domain=${d}`
@@ -136,16 +160,22 @@ async function fetchEntsoe(token, domain) {
     try {
       const xml = await fetchText(url);
       if (xml.includes("Acknowledgement_MarketDocument")) continue; // this zone had no data
-      entsoeByType(xml, byType);
+      const { byType: zb, latestEnd: ze } = entsoeByType(xml);
+      if (!Object.keys(zb).length) continue;
+      for (const [psr, q] of Object.entries(zb)) byType[psr] = (byType[psr] || 0) + q;
+      if (ze > latestEnd) latestEnd = ze;
       ok++;
     } catch { /* skip this zone, keep others */ }
   }
-  if (!ok) throw new Error("ENTSO-E: no zone returned data (bad token / no data)");
+  // Require a quorum of zones for multi-zone countries so a partial response can't
+  // masquerade as a complete country figure; otherwise keep the annual value.
+  const needed = domains.length > 1 ? Math.ceil(domains.length / 2) : 1;
+  if (ok < needed) throw new Error(`ENTSO-E: only ${ok}/${domains.length} zones returned data (need ${needed})`);
   const { renewable, carbon } = computeEntsoe(byType);
   return {
     renewable, carbon, carbonEstimated: true,
     source: domains.length > 1 ? "ENTSO-E Transparency Platform (zones)" : "ENTSO-E Transparency Platform",
-    at: `${periodEnd.slice(0, 8)}T${periodEnd.slice(8, 12)}Z`,
+    at: isoMinuteZ(latestEnd) || isoMinuteZ(periodEnd),
   };
 }
 
