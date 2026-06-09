@@ -55,12 +55,30 @@ export const ENTSOE_RENEWABLE_PSR = new Set([
   "B19", // Wind Onshore
 ]);
 
+// ENTSO-E PSR breakdown groups (sub-shares of the same generation total).
+export const ENTSOE_FOSSIL_PSR = new Set([
+  "B02", // Fossil Brown coal/Lignite
+  "B03", // Fossil Coal-derived gas
+  "B04", // Fossil Gas
+  "B05", // Fossil Hard coal
+  "B06", // Fossil Oil
+  "B07", // Fossil Oil shale
+  "B08", // Fossil Peat
+]);
+export const ENTSOE_NUCLEAR_PSR = new Set(["B14"]); // Nuclear
+export const ENTSOE_WIND_PSR = new Set(["B18", "B19"]); // Wind Offshore + Onshore
+export const ENTSOE_SOLAR_PSR = new Set(["B16"]); // Solar
+
 // ESO (UK National Energy System Operator) generation-mix fuels counted as renewable.
 export const ESO_RENEWABLE = new Set(["biomass", "hydro", "solar", "wind"]);
+// ESO fossil fuels (wind/solar/nuclear are single literal fuel names in the mix).
+export const ESO_FOSSIL = new Set(["coal", "gas", "oil"]);
 
 // EIA RTO fuel-type ids counted as renewable. (Biomass/geothermal fall under the
 // aggregated "OTH" bucket and are excluded to avoid over-counting.)
 export const EIA_RENEWABLE = new Set(["SUN", "WND", "WAT"]);
+// EIA fossil fuel-type ids (wind=WND, solar=SUN, nuclear=NUC are single ids).
+export const EIA_FOSSIL = new Set(["COL", "NG", "OIL"]);
 
 // match-name → EIA respondent (balancing-authority) code.
 export const EIA_RESPONDENT = { "United States of America": "US" };

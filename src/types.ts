@@ -22,6 +22,11 @@ export interface EnergyMix {
 export interface LivePoint {
   renewable: number | null;
   carbon: number | null;
+  /** Live generation-mix sub-shares (% of generation now); null where unavailable. */
+  wind: number | null;
+  solar: number | null;
+  nuclear: number | null;
+  fossil: number | null;
   source: string;
   /** ISO timestamp of the upstream interval. */
   at: string;

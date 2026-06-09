@@ -128,6 +128,15 @@ export function CountryPanel({ rec, metric, scales, onClose, onPin, isPinned }: 
                   <span style={{ fontSize: 11.5, color: "var(--text-3)" }}>· <span className="mono tnum" style={{ color: scales.carbon(rec.live.carbon) }}>{Math.round(rec.live.carbon)}</span> gCO₂/kWh</span>
                 )}
               </div>
+              {(rec.live.wind != null || rec.live.solar != null || rec.live.nuclear != null || rec.live.fossil != null) && (
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "2px 10px", fontSize: 11, color: "var(--text-3)", marginTop: 3 }}>
+                  {([["Wind", rec.live.wind], ["Solar", rec.live.solar], ["Nuclear", rec.live.nuclear], ["Fossil", rec.live.fossil]] as const)
+                    .filter(([, v]) => v != null)
+                    .map(([label, v]) => (
+                      <span key={label}>{label} <span className="mono tnum" style={{ color: "var(--text-2)" }}>{Math.round(v as number)}%</span></span>
+                    ))}
+                </div>
+              )}
               <div style={{ fontSize: 10.5, color: "var(--text-3)", marginTop: 2, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{rec.live.source} · {fmtLiveTime(rec.live.at)}</div>
             </div>
           </div>

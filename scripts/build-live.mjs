@@ -22,8 +22,9 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
 import {
-  ENTSOE_DOMAINS, ENTSOE_RENEWABLE_PSR, ESO_RENEWABLE, EIA_RENEWABLE,
-  EIA_RESPONDENT, ESO_COUNTRY,
+  ENTSOE_DOMAINS, ENTSOE_RENEWABLE_PSR, ENTSOE_FOSSIL_PSR, ENTSOE_NUCLEAR_PSR,
+  ENTSOE_WIND_PSR, ENTSOE_SOLAR_PSR, ESO_RENEWABLE, ESO_FOSSIL, EIA_RENEWABLE,
+  EIA_FOSSIL, EIA_RESPONDENT, ESO_COUNTRY,
 } from "./live-sources.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -41,12 +42,19 @@ async function fetchEso() {
   const gen = JSON.parse(await fetchText("https://api.carbonintensity.org.uk/generation"));
   const mix = gen.data.generationmix;
   const renew = mix.filter((m) => ESO_RENEWABLE.has(m.fuel)).reduce((s, m) => s + m.perc, 0);
+  // perc values are already percentages of the live mix.
+  const perc = (fuel) => mix.find((m) => m.fuel === fuel)?.perc ?? null;
+  const fossil = mix.filter((m) => ESO_FOSSIL.has(m.fuel)).reduce((s, m) => s + m.perc, 0);
   let carbon = null;
   try {
     const ci = JSON.parse(await fetchText("https://api.carbonintensity.org.uk/intensity"));
     carbon = ci.data?.[0]?.intensity?.actual ?? ci.data?.[0]?.intensity?.forecast ?? null;
   } catch { /* carbon is optional */ }
-  return { renewable: round1(renew), carbon, source: "National Energy System Operator (UK)", at: gen.data.to };
+  return {
+    renewable: round1(renew), carbon,
+    wind: perc("wind"), solar: perc("solar"), nuclear: perc("nuclear"), fossil: round1(fossil),
+    source: "National Energy System Operator (UK)", at: gen.data.to,
+  };
 }
 
 // ---- EIA (US) — needs EIA_KEY ----------------------------------------------
@@ -59,15 +67,24 @@ async function fetchEia(key, respondent) {
   if (!rows.length) throw new Error("EIA: no rows");
   const latest = rows[0].period;
   const hour = rows.filter((r) => r.period === latest);
-  let total = 0, renew = 0;
+  let total = 0, renew = 0, wind = 0, solar = 0, nuclear = 0, fossil = 0;
   for (const r of hour) {
     const v = +r.value;
     if (!Number.isFinite(v) || v < 0) continue;
     total += v;
     if (EIA_RENEWABLE.has(r.fueltype)) renew += v;
+    if (r.fueltype === "WND") wind += v;
+    if (r.fueltype === "SUN") solar += v;
+    if (r.fueltype === "NUC") nuclear += v;
+    if (EIA_FOSSIL.has(r.fueltype)) fossil += v;
   }
   if (total <= 0) throw new Error("EIA: zero total");
-  return { renewable: round1((renew / total) * 100), carbon: null, source: "U.S. EIA Grid Monitor", at: `${latest}:00Z` };
+  const pct = (v) => round1((v / total) * 100);
+  return {
+    renewable: pct(renew), carbon: null,
+    wind: pct(wind), solar: pct(solar), nuclear: pct(nuclear), fossil: pct(fossil),
+    source: "U.S. EIA Grid Monitor", at: `${latest}:00Z`,
+  };
 }
 
 // ---- ENTSO-E (EU) — needs ENTSOE_TOKEN -------------------------------------
@@ -99,14 +116,19 @@ function parseEntsoe(xml) {
     }
     if (bestQty != null) byType[psr] = (byType[psr] || 0) + bestQty;
   }
-  let total = 0, renew = 0;
+  let total = 0, renew = 0, wind = 0, solar = 0, nuclear = 0, fossil = 0;
   for (const [psr, q] of Object.entries(byType)) {
     if (psr === "B10") continue; // pumped-storage generation excluded
     total += q;
     if (ENTSOE_RENEWABLE_PSR.has(psr)) renew += q;
+    if (ENTSOE_WIND_PSR.has(psr)) wind += q;
+    if (ENTSOE_SOLAR_PSR.has(psr)) solar += q;
+    if (ENTSOE_NUCLEAR_PSR.has(psr)) nuclear += q;
+    if (ENTSOE_FOSSIL_PSR.has(psr)) fossil += q;
   }
   if (total <= 0) throw new Error("ENTSO-E: zero total");
-  return round1((renew / total) * 100);
+  const pct = (v) => round1((v / total) * 100);
+  return { renewable: pct(renew), wind: pct(wind), solar: pct(solar), nuclear: pct(nuclear), fossil: pct(fossil) };
 }
 
 async function fetchEntsoe(token, domain) {
@@ -116,7 +138,7 @@ async function fetchEntsoe(token, domain) {
     + `&periodStart=${periodStart}&periodEnd=${periodEnd}`;
   const xml = await fetchText(url);
   if (xml.includes("Acknowledgement_MarketDocument")) throw new Error("ENTSO-E: acknowledgement (no data / bad token)");
-  return { renewable: parseEntsoe(xml), carbon: null, source: "ENTSO-E Transparency Platform", at: `${periodEnd.slice(0, 8)}T${periodEnd.slice(8, 12)}Z` };
+  return { ...parseEntsoe(xml), carbon: null, source: "ENTSO-E Transparency Platform", at: `${periodEnd.slice(0, 8)}T${periodEnd.slice(8, 12)}Z` };
 }
 
 // ---- main ------------------------------------------------------------------
