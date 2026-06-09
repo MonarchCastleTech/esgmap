@@ -19,12 +19,15 @@
  *     placeholder), so live data never spams git history.
  */
 import { readFileSync, writeFileSync } from "node:fs";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, resolve } from "node:path";
 import {
-  ENTSOE_DOMAINS, ENTSOE_RENEWABLE_PSR, ESO_RENEWABLE, EIA_RENEWABLE,
-  EIA_RESPONDENT, ESO_COUNTRY,
+  ENTSOE_DOMAINS, ENTSOE_RENEWABLE_PSR, ENTSOE_EMISSION, ESO_RENEWABLE,
+  EIA_RENEWABLE, EIA_EMISSION, EIA_RESPONDENT, ESO_COUNTRY,
 } from "./live-sources.mjs";
+
+// PSR codes excluded from the generation total (storage, not generation).
+const ENTSOE_STORAGE = new Set(["B10", "B25"]);
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
@@ -46,7 +49,7 @@ async function fetchEso() {
     const ci = JSON.parse(await fetchText("https://api.carbonintensity.org.uk/intensity"));
     carbon = ci.data?.[0]?.intensity?.actual ?? ci.data?.[0]?.intensity?.forecast ?? null;
   } catch { /* carbon is optional */ }
-  return { renewable: round1(renew), carbon, source: "National Energy System Operator (UK)", at: gen.data.to };
+  return { renewable: round1(renew), carbon, carbonEstimated: false, source: "National Energy System Operator (UK)", at: gen.data.to };
 }
 
 // ---- EIA (US) — needs EIA_KEY ----------------------------------------------
@@ -59,15 +62,22 @@ async function fetchEia(key, respondent) {
   if (!rows.length) throw new Error("EIA: no rows");
   const latest = rows[0].period;
   const hour = rows.filter((r) => r.period === latest);
-  let total = 0, renew = 0;
+  let total = 0, renew = 0, emis = 0;
   for (const r of hour) {
     const v = +r.value;
     if (!Number.isFinite(v) || v < 0) continue;
     total += v;
     if (EIA_RENEWABLE.has(r.fueltype)) renew += v;
+    emis += v * (EIA_EMISSION[r.fueltype] ?? 400);
   }
   if (total <= 0) throw new Error("EIA: zero total");
-  return { renewable: round1((renew / total) * 100), carbon: null, source: "U.S. EIA Grid Monitor", at: `${latest}:00Z` };
+  return {
+    renewable: round1((renew / total) * 100),
+    carbon: Math.round(emis / total),
+    carbonEstimated: true,
+    source: "U.S. EIA Grid Monitor",
+    at: `${latest}:00Z`,
+  };
 }
 
 // ---- ENTSO-E (EU) — needs ENTSOE_TOKEN -------------------------------------
@@ -82,9 +92,8 @@ function entsoeWindow() {
   return { periodStart: fmt(start), periodEnd: fmt(now) };
 }
 
-// Sum the latest interval's quantity per PSR type from the A75 XML.
-function parseEntsoe(xml) {
-  const byType = {};
+// Sum the latest interval's quantity per PSR type from one zone's A75 XML.
+function entsoeByType(xml, acc = {}) {
   const series = xml.split("<TimeSeries>").slice(1);
   for (const ts of series) {
     const psr = (ts.match(/<psrType>([^<]+)<\/psrType>/) || [])[1];
@@ -97,26 +106,47 @@ function parseEntsoe(xml) {
       const pos = +m[1];
       if (pos > bestPos) { bestPos = pos; bestQty = +m[2]; }
     }
-    if (bestQty != null) byType[psr] = (byType[psr] || 0) + bestQty;
+    if (bestQty != null) acc[psr] = (acc[psr] || 0) + bestQty;
   }
-  let total = 0, renew = 0;
+  return acc;
+}
+
+// Renewable share (%) + estimated grid carbon (gCO₂/kWh) from merged PSR totals.
+export function computeEntsoe(byType) {
+  let total = 0, renew = 0, emis = 0;
   for (const [psr, q] of Object.entries(byType)) {
-    if (psr === "B10") continue; // pumped-storage generation excluded
+    if (ENTSOE_STORAGE.has(psr)) continue; // storage, not generation
     total += q;
     if (ENTSOE_RENEWABLE_PSR.has(psr)) renew += q;
+    emis += q * (ENTSOE_EMISSION[psr] ?? 700);
   }
   if (total <= 0) throw new Error("ENTSO-E: zero total");
-  return round1((renew / total) * 100);
+  return { renewable: round1((renew / total) * 100), carbon: Math.round(emis / total) };
 }
 
 async function fetchEntsoe(token, domain) {
+  const domains = Array.isArray(domain) ? domain : [domain];
   const { periodStart, periodEnd } = entsoeWindow();
-  const url = `https://web-api.tp.entsoe.eu/api?securityToken=${token}`
-    + `&documentType=A75&processType=A16&in_Domain=${domain}`
-    + `&periodStart=${periodStart}&periodEnd=${periodEnd}`;
-  const xml = await fetchText(url);
-  if (xml.includes("Acknowledgement_MarketDocument")) throw new Error("ENTSO-E: acknowledgement (no data / bad token)");
-  return { renewable: parseEntsoe(xml), carbon: null, source: "ENTSO-E Transparency Platform", at: `${periodEnd.slice(0, 8)}T${periodEnd.slice(8, 12)}Z` };
+  const byType = {};
+  let ok = 0;
+  for (const d of domains) {
+    const url = `https://web-api.tp.entsoe.eu/api?securityToken=${token}`
+      + `&documentType=A75&processType=A16&in_Domain=${d}`
+      + `&periodStart=${periodStart}&periodEnd=${periodEnd}`;
+    try {
+      const xml = await fetchText(url);
+      if (xml.includes("Acknowledgement_MarketDocument")) continue; // this zone had no data
+      entsoeByType(xml, byType);
+      ok++;
+    } catch { /* skip this zone, keep others */ }
+  }
+  if (!ok) throw new Error("ENTSO-E: no zone returned data (bad token / no data)");
+  const { renewable, carbon } = computeEntsoe(byType);
+  return {
+    renewable, carbon, carbonEstimated: true,
+    source: domains.length > 1 ? "ENTSO-E Transparency Platform (zones)" : "ENTSO-E Transparency Platform",
+    at: `${periodEnd.slice(0, 8)}T${periodEnd.slice(8, 12)}Z`,
+  };
 }
 
 // ---- main ------------------------------------------------------------------
@@ -163,4 +193,7 @@ async function main() {
   if (tally.length) console.log("  " + tally.join("  ·  "));
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+// Run only when invoked directly (not when imported for testing).
+if (import.meta.url === pathToFileURL(process.argv[1] || "").href) {
+  main().catch((e) => { console.error(e); process.exit(1); });
+}

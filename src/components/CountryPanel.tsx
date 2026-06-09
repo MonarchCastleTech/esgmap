@@ -125,7 +125,7 @@ export function CountryPanel({ rec, metric, scales, onClose, onPin, isPinned }: 
                   <span><span className="mono tnum" style={{ fontSize: 15, fontWeight: 600, color: scales.renewable(rec.live.renewable) }}>{Math.round(rec.live.renewable)}%</span><span style={{ fontSize: 11, color: "var(--text-3)" }}> renewables now</span></span>
                 )}
                 {rec.live.carbon != null && (
-                  <span style={{ fontSize: 11.5, color: "var(--text-3)" }}>· <span className="mono tnum" style={{ color: scales.carbon(rec.live.carbon) }}>{Math.round(rec.live.carbon)}</span> gCO₂/kWh</span>
+                  <span style={{ fontSize: 11.5, color: "var(--text-3)" }}>· <span className="mono tnum" style={{ color: scales.carbon(rec.live.carbon) }}>{rec.live.carbonEstimated ? "~" : ""}{Math.round(rec.live.carbon)}</span> gCO₂/kWh{rec.live.carbonEstimated ? " est." : ""}</span>
                 )}
               </div>
               <div style={{ fontSize: 10.5, color: "var(--text-3)", marginTop: 2, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{rec.live.source} · {fmtLiveTime(rec.live.at)}</div>

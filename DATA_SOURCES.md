@@ -30,11 +30,18 @@ from the annual share, never blended into it.
 |---|---|---|---|---|
 | **National Energy System Operator (UK)** | United Kingdom | `api.carbonintensity.org.uk/generation` + `/intensity` | none | CC BY 4.0 |
 | **U.S. EIA Grid Monitor** | United States | `api.eia.gov/v2/electricity/rto/fuel-type-data` | `EIA_KEY` (free) | Public domain (US Gov) |
-| **ENTSO-E Transparency Platform** | ~20 European single-zone TSOs | `web-api.tp.entsoe.eu` (A75/A16) | `ENTSOE_TOKEN` (free) | © ENTSO-E, reuse permitted with attribution |
+| **ENTSO-E Transparency Platform** | ~25 European countries (incl. zone-summed Norway/Sweden/Denmark) | `web-api.tp.entsoe.eu` (A75/A16) | `ENTSOE_TOKEN` (free) | © ENTSO-E, reuse permitted with attribution |
 
 Renewable classification: UK = biomass + hydro + solar + wind; EIA = SUN + WND + WAT; ENTSO-E =
-PSR B01/B09/B11/B12/B13/B15/B16/B18/B19 (excludes B10 pumped-storage and B17 waste). Multi-zone
-countries (Norway, Sweden, Denmark) are intentionally excluded and keep their annual value.
+PSR B01/B09/B11/B12/B13/B15/B16/B18/B19 (excludes B10/B25 storage and B17 waste). Multi-bidding-zone
+countries (Norway, Sweden, Denmark) are summed across their price zones; Iceland is an isolated grid
+with no ENTSO-E feed and keeps its annual value.
+
+**Live grid carbon (gCO₂/kWh):** measured directly for the UK (NESO); for EIA and ENTSO-E it is
+*estimated* by weighting the live generation mix with lifecycle emission factors (IPCC AR5 medians —
+e.g. lignite 1050, hard coal 820, gas 490, oil 700, biomass 230, solar 45, hydro 24, wind 11,
+nuclear 12). Estimated values are shown with a leading “~”. Factors live in
+`scripts/live-sources.mjs` (`ENTSOE_EMISSION`, `EIA_EMISSION`).
 
 ## Curated, dated layer (slow-moving / categorical)
 

@@ -22,6 +22,8 @@ export interface EnergyMix {
 export interface LivePoint {
   renewable: number | null;
   carbon: number | null;
+  /** True when carbon is estimated from the mix (not measured by the operator). */
+  carbonEstimated?: boolean;
   source: string;
   /** ISO timestamp of the upstream interval. */
   at: string;

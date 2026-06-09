@@ -81,7 +81,10 @@ distinctly and never overwrites the annual metric.
 |---|---|---|
 | National Energy System Operator (`carbonintensity.org.uk`) | United Kingdom | none |
 | U.S. EIA Grid Monitor (`api.eia.gov`) | United States | `EIA_KEY` (free, instant) |
-| ENTSO-E Transparency Platform (`web-api.tp.entsoe.eu`) | ~20 European single-zone TSOs | `ENTSOE_TOKEN` (free, email request) |
+| ENTSO-E Transparency Platform (`web-api.tp.entsoe.eu`) | ~25 European countries (incl. zone-summed NO/SE/DK) | `ENTSOE_TOKEN` (free, email request) |
+
+Both **live renewable share and live grid carbon** are surfaced — carbon measured for the UK, and
+estimated from the live mix via lifecycle emission factors for EIA/ENTSO-E (shown with a “~”).
 
 `scripts/build-live.mjs` queries these and writes `src/data/live.json` — a small overlay the app
 merges on load. **The UK works with no token**, so there is always at least one live country; the

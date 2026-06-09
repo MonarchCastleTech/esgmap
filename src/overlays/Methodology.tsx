@@ -49,10 +49,12 @@ export function AboutOverlay({ onClose }: { onClose: () => void }) {
               <span style={{ width: 7, height: 7, borderRadius: 99, background: "var(--accent)", display: "inline-block" }} /> Near-real-time layer
             </span>
             <div style={{ marginTop: 5 }}>
-              {ESG.LIVE_COUNT} countries also carry a <b>live</b> renewable-share reading from their national grid operator,
-              refreshed hourly and shown beside the annual figure on the country panel. Sources: National Energy System
-              Operator (UK), U.S. EIA Grid Monitor, and the ENTSO-E Transparency Platform (Europe). Instantaneous mix
-              differs from the annual share by design — it's a snapshot, not a yearly average.
+              {ESG.LIVE_COUNT} countries also carry a <b>live</b> renewable-share and grid-carbon reading from their
+              national grid operator, refreshed hourly and shown beside the annual figure on the country panel. Sources:
+              National Energy System Operator (UK), U.S. EIA Grid Monitor, and the ENTSO-E Transparency Platform (Europe,
+              incl. zone-summed Norway/Sweden/Denmark). Instantaneous mix differs from the annual share by design — it's a
+              snapshot, not a yearly average. Live carbon is measured for the UK and <i>estimated</i> from the mix using
+              lifecycle emission factors elsewhere (shown with a “~”).
             </div>
           </div>
         )}

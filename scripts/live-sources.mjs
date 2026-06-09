@@ -16,8 +16,10 @@
  * value and are labelled "annual". Coverage can be widened later.
  */
 
-// ENTSO-E control-area / country EIC domains that report country-level
-// "actual generation per production type" (documentType A75, processType A16).
+// ENTSO-E control-area / country EIC domains that report "actual generation per
+// production type" (documentType A75, processType A16). A value may be a single
+// domain string or an array of bidding-zone domains that are summed to recover a
+// country-level figure (Norway, Sweden, Denmark are split into price zones).
 export const ENTSOE_DOMAINS = {
   France: "10YFR-RTE------C",
   Germany: "10Y1001A1001A82H", // DE-LU
@@ -39,6 +41,42 @@ export const ENTSOE_DOMAINS = {
   Finland: "10YFI-1--------U",
   Ireland: "10Y1001A1001A59C", // SEM (all-island)
   Turkey: "10YTR-TEIAS----W",
+  Ukraine: "10Y1001C--00003F", // Ukraine IPS (ENTSO-E synchronous since 2022)
+  Serbia: "10YCS-SERBIATSOV",
+  // multi-bidding-zone countries — summed across price zones
+  Norway: ["10YNO-1--------2", "10YNO-2--------T", "10YNO-3--------J", "10YNO-4--------9", "10Y1001A1001A48H"],
+  Sweden: ["10Y1001A1001A44P", "10Y1001A1001A45N", "10Y1001A1001A46L", "10Y1001A1001A47J"],
+  Denmark: ["10YDK-1--------W", "10YDK-2--------M"],
+};
+
+// Lifecycle CO₂-equivalent emission factors (gCO₂eq/kWh), keyed by ENTSO-E PSR
+// code, used to ESTIMATE live grid carbon from the generation mix (IPCC AR5
+// median lifecycle values; biomass and waste are approximate by nature).
+export const ENTSOE_EMISSION = {
+  B01: 230,  // Biomass
+  B02: 1050, // Fossil Brown coal / Lignite
+  B03: 820,  // Fossil Coal-derived gas
+  B04: 490,  // Fossil Gas
+  B05: 820,  // Fossil Hard coal
+  B06: 700,  // Fossil Oil
+  B07: 900,  // Fossil Oil shale
+  B08: 1000, // Fossil Peat
+  B09: 38,   // Geothermal
+  B11: 24,   // Hydro Run-of-river
+  B12: 24,   // Hydro Water Reservoir
+  B13: 17,   // Marine
+  B14: 12,   // Nuclear
+  B15: 30,   // Other renewable
+  B16: 45,   // Solar
+  B17: 580,  // Waste
+  B18: 11,   // Wind Offshore
+  B19: 11,   // Wind Onshore
+  B20: 700,  // Other (assumed fossil-ish)
+};
+
+// Same idea for EIA RTO fuel-type ids.
+export const EIA_EMISSION = {
+  COL: 820, NG: 490, NUC: 12, OIL: 700, SUN: 45, WAT: 24, WND: 11, OTH: 400,
 };
 
 // ENTSO-E PSR (production-source) type codes counted as renewable.
