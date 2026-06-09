@@ -18,6 +18,15 @@ export interface EnergyMix {
   nuclear: number; fossil: number; other: number;
 }
 
+/** Near-real-time reading from a national grid operator (overlay on the annual value). */
+export interface LivePoint {
+  renewable: number | null;
+  carbon: number | null;
+  source: string;
+  /** ISO timestamp of the upstream interval. */
+  at: string;
+}
+
 export interface History {
   years: number[];
   /** Real annual points; null where a year has no upstream observation. */
@@ -58,6 +67,13 @@ export interface CountryRecord {
   esg: string | null;
 
   history: History | null;
+  /** Optional near-real-time overlay (present only for grid-operator-covered countries). */
+  live?: LivePoint | null;
+}
+
+export interface LiveOverlay {
+  generatedAt: string | null;
+  countries: Record<string, LivePoint>;
 }
 
 export interface MetricMeta {

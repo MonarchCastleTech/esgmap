@@ -6,8 +6,9 @@
 import { scaleLinear, type ScaleLinear } from "d3-scale";
 import { interpolateRgb } from "d3-interpolate";
 import raw from "./countries.json";
+import liveRaw from "./live.json";
 import type {
-  CountryRecord, Dataset, MetricKey, MetricMeta, RegionTrend, Region,
+  CountryRecord, Dataset, LiveOverlay, MetricKey, MetricMeta, RegionTrend, Region,
 } from "../types";
 
 const data = raw as unknown as Dataset;
@@ -17,6 +18,14 @@ export const all: CountryRecord[] = data.countries;
 export const YEAR_MIN = data.meta.yearMin;
 export const YEAR_MAX = data.meta.yearMax;
 export const NO_DATA = "#222a26";
+
+// Merge the near-real-time overlay (generated hourly by scripts/build-live.mjs,
+// baked into the deployed build). Absent/empty in normal local builds.
+const liveOverlay = liveRaw as unknown as LiveOverlay;
+for (const c of all) c.live = liveOverlay.countries[c.match] ?? null;
+
+export const LIVE_GENERATED_AT = liveOverlay.generatedAt;
+export const LIVE_COUNT = Object.keys(liveOverlay.countries).length;
 
 /** matchName → record */
 export const byName: Record<string, CountryRecord> = {};

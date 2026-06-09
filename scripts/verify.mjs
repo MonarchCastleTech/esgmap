@@ -54,11 +54,21 @@ await page.waitForSelector("text=Sustainability score", { timeout: 5000 });
 assert(await page.locator("text=Electricity mix").count() > 0, "country panel opens with detail");
 await page.screenshot({ path: `${shots}/03-panel.png` });
 
+// 4b. Live overlay: UK panel shows a LIVE banner with a "renewables now" reading
+await page.locator("input[placeholder^='Search']").fill("United Kingdom");
+await page.waitForTimeout(300);
+await page.locator("button:has-text('United Kingdom')").first().click();
+await page.waitForSelector("text=Sustainability score", { timeout: 5000 });
+const liveBanner = await page.locator("text=renewables now").count();
+assert(liveBanner > 0, "live (near-real-time) banner renders on a grid-covered country");
+await page.keyboard.press("Escape");
+await page.waitForTimeout(250);
+
 // 5. Open each overlay
 for (const [nav, marker, name] of [
   ["Rankings", "sorted by", "rankings"],
   ["Regional trends", "by region", "trends"],
-  ["Methodology", "Live data provenance", "methodology"],
+  ["Methodology", "data provenance", "methodology"],
 ]) {
   await page.locator(`button:has-text("${nav}")`).first().click();
   await page.waitForTimeout(400);

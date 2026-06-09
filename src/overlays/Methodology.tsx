@@ -43,7 +43,21 @@ export function AboutOverlay({ onClose }: { onClose: () => void }) {
         <Def t="Paris Agreement, NDC & net-zero" d="Ratification of the 2015 Paris Agreement, the headline 2030 NDC target, and the national net-zero target year (curated, slow-moving)." src="UNFCCC NDC Registry; Climate Watch (WRI); Net Zero Tracker (Oxford / ECIU)" />
         <Def t="IFRS S1 / S2" d="Adoption status of the ISSB's IFRS S1 (general sustainability) and S2 (climate) disclosure standards: mandatory, adopting, roadmap, consulting, or none (curated)." src="IFRS Foundation jurisdiction profiles; IOSCO" />
 
-        <div style={{ marginTop: 22, fontSize: 12, color: "var(--text-2)", fontWeight: 600 }}>Live data provenance</div>
+        {ESG.LIVE_COUNT > 0 && (
+          <div style={{ marginTop: 18, padding: "12px 15px", background: "rgba(95,191,127,.07)", border: "1px solid rgba(95,191,127,.28)", borderRadius: 10, fontSize: 12.5 }}>
+            <span style={{ display: "inline-flex", alignItems: "center", gap: 7, color: "var(--accent)", fontWeight: 600 }}>
+              <span style={{ width: 7, height: 7, borderRadius: 99, background: "var(--accent)", display: "inline-block" }} /> Near-real-time layer
+            </span>
+            <div style={{ marginTop: 5 }}>
+              {ESG.LIVE_COUNT} countries also carry a <b>live</b> renewable-share reading from their national grid operator,
+              refreshed hourly and shown beside the annual figure on the country panel. Sources: National Energy System
+              Operator (UK), U.S. EIA Grid Monitor, and the ENTSO-E Transparency Platform (Europe). Instantaneous mix
+              differs from the annual share by design — it's a snapshot, not a yearly average.
+            </div>
+          </div>
+        )}
+
+        <div style={{ marginTop: 22, fontSize: 12, color: "var(--text-2)", fontWeight: 600 }}>Annual data provenance</div>
         <div style={{ marginTop: 8, border: "1px solid var(--border)", borderRadius: 10, overflow: "hidden" }}>
           {sources.map((s, i) => (
             <div key={s.id} style={{ display: "flex", flexDirection: "column", gap: 3, padding: "10px 13px", borderTop: i ? "1px solid var(--border)" : "none", background: "var(--panel-2)" }}>

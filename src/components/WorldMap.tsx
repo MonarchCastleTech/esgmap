@@ -308,6 +308,12 @@ export function WorldMap(props: WorldMapProps) {
           ) : (
             <div style={{ fontSize: 11, color: "var(--text-3)" }}>No coverage in dataset</div>
           )}
+          {tipRec && tipRec.live && (metric === "renewable" || metric === "carbon") && (
+            <div style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 10.5, marginTop: 5, color: "var(--accent)" }}>
+              <span style={{ width: 6, height: 6, borderRadius: 99, background: "var(--accent)" }} />
+              LIVE {tipRec.live.renewable != null ? Math.round(tipRec.live.renewable) + "% now" : ""}
+            </div>
+          )}
           {tipRec && <div style={{ fontSize: 10.5, color: "var(--text-3)", marginTop: 4 }}>{tipRec.region} · click for detail</div>}
         </div>
       )}

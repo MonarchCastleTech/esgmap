@@ -54,11 +54,15 @@ body {
 .slidein { animation: slidein .34s cubic-bezier(.22, .61, .36, 1) both; }
 @keyframes slidein { from { transform: translateX(18px); } to { transform: none; } }
 
+/* live "now" pulse */
+.live-pulse { animation: livepulse 2s ease-out infinite; }
+@keyframes livepulse { 0% { transform: scale(1); opacity: .6; } 70%, 100% { transform: scale(2.6); opacity: 0; } }
+
 button { font-family: inherit; color: inherit; cursor: pointer; }
 input { font-family: inherit; }
 
 @media (prefers-reduced-motion: reduce) {
-  .fadein, .slidein { animation: none !important; }
+  .fadein, .slidein, .live-pulse { animation: none !important; }
   .country { transition: none; }
 }
 

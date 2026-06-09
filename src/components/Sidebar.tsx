@@ -4,6 +4,12 @@ import type { ViewId } from "../App";
 import { Icon } from "../ui/Icon";
 import { LAYERS } from "../layers";
 
+function fmtClock(iso: string): string {
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return "";
+  return `${String(d.getUTCHours()).padStart(2, "0")}:${String(d.getUTCMinutes()).padStart(2, "0")} UTC`;
+}
+
 const NAV: { id: ViewId | "map"; label: string; icon: string }[] = [
   { id: "map", label: "Map", icon: "map" },
   { id: "rankings", label: "Rankings", icon: "rank" },
@@ -80,10 +86,20 @@ export function Sidebar({ view, setView, metric, setMetric }: {
 
       <div style={{ flex: 1 }} />
       <div style={{ padding: "0 6px", fontSize: 10.5, color: "var(--text-3)", lineHeight: 1.55 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 4 }}>
-          <span style={{ width: 6, height: 6, borderRadius: 99, background: "var(--accent)" }} />
-          Live open data · {ESG.META.generatedAt}
-        </div>
+        {ESG.LIVE_COUNT > 0 ? (
+          <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 4 }}>
+            <span style={{ position: "relative", width: 6, height: 6 }}>
+              <span style={{ position: "absolute", inset: 0, borderRadius: 99, background: "var(--accent)" }} />
+              <span className="live-pulse" style={{ position: "absolute", inset: 0, borderRadius: 99, background: "var(--accent)" }} />
+            </span>
+            {ESG.LIVE_COUNT} live now{ESG.LIVE_GENERATED_AT ? ` · ${fmtClock(ESG.LIVE_GENERATED_AT)}` : ""}
+          </div>
+        ) : (
+          <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 4 }}>
+            <span style={{ width: 6, height: 6, borderRadius: 99, background: "var(--accent)" }} />
+            Open data · {ESG.META.generatedAt}
+          </div>
+        )}
         Edition {ESG.YEAR_MAX} · {ESG.META.territories} territories
       </div>
     </aside>

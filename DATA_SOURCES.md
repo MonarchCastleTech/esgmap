@@ -18,6 +18,24 @@ in the UI — figures are never fabricated.
 | Forest cover (% land) | **World Bank** `AG.LND.FRST.ZS` (FAO Forest Resources Assessment) | `api.worldbank.org/v2/country/all/indicator/AG.LND.FRST.ZS` | CC BY 4.0 |
 | Air quality (PM2.5, µg/m³) | **World Bank** `EN.ATM.PM25.MC.M3` (WHO / IHME Global Burden of Disease) | `api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3` | CC BY 4.0 |
 
+## Near-real-time layer (hourly overlay)
+
+Countries covered by a free national grid-operator API also carry a **live** renewable-share
+reading (and grid carbon where published), ingested by
+[`scripts/build-live.mjs`](scripts/build-live.mjs) into `src/data/live.json` and refreshed hourly
+by the deploy workflow. This is a snapshot of instantaneous generation mix — labelled distinctly
+from the annual share, never blended into it.
+
+| Source | Coverage | Endpoint | Token | License |
+|---|---|---|---|---|
+| **National Energy System Operator (UK)** | United Kingdom | `api.carbonintensity.org.uk/generation` + `/intensity` | none | CC BY 4.0 |
+| **U.S. EIA Grid Monitor** | United States | `api.eia.gov/v2/electricity/rto/fuel-type-data` | `EIA_KEY` (free) | Public domain (US Gov) |
+| **ENTSO-E Transparency Platform** | ~20 European single-zone TSOs | `web-api.tp.entsoe.eu` (A75/A16) | `ENTSOE_TOKEN` (free) | © ENTSO-E, reuse permitted with attribution |
+
+Renewable classification: UK = biomass + hydro + solar + wind; EIA = SUN + WND + WAT; ENTSO-E =
+PSR B01/B09/B11/B12/B13/B15/B16/B18/B19 (excludes B10 pumped-storage and B17 waste). Multi-zone
+countries (Norway, Sweden, Denmark) are intentionally excluded and keep their annual value.
+
 ## Curated, dated layer (slow-moving / categorical)
 
 These fields update rarely and are maintained as a curated JSON
@@ -63,6 +81,7 @@ source and the retrieval date shown in the Methodology view.
 ## Reproducing the dataset
 
 ```bash
-npm run build:data     # re-ingest the live feeds → src/data/countries.json
+npm run build:data     # re-ingest the annual feeds → src/data/countries.json
+npm run build:live     # refresh the live overlay → src/data/live.json (UK with no token)
 npm run build:meta     # regenerate the curated layer from the design handoff (rarely needed)
 ```

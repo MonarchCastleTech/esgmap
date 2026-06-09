@@ -111,6 +111,28 @@ export function CountryPanel({ rec, metric, scales, onClose, onPin, isPinned }: 
       </div>
 
       <div style={{ flex: 1, overflowY: "auto" }}>
+        {/* live (near-real-time) banner */}
+        {rec.live && (
+          <div style={{ display: "flex", alignItems: "center", gap: 11, padding: "11px 22px", background: "rgba(95,191,127,.07)", borderBottom: "1px solid var(--border)" }}>
+            <span style={{ position: "relative", width: 8, height: 8, flex: "0 0 auto" }}>
+              <span style={{ position: "absolute", inset: 0, borderRadius: 99, background: "var(--accent)" }} />
+              <span className="live-pulse" style={{ position: "absolute", inset: 0, borderRadius: 99, background: "var(--accent)" }} />
+            </span>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ display: "flex", alignItems: "baseline", gap: 7 }}>
+                <span style={{ fontSize: 10.5, fontWeight: 700, letterSpacing: ".09em", color: "var(--accent)" }}>LIVE</span>
+                {rec.live.renewable != null && (
+                  <span><span className="mono tnum" style={{ fontSize: 15, fontWeight: 600, color: scales.renewable(rec.live.renewable) }}>{Math.round(rec.live.renewable)}%</span><span style={{ fontSize: 11, color: "var(--text-3)" }}> renewables now</span></span>
+                )}
+                {rec.live.carbon != null && (
+                  <span style={{ fontSize: 11.5, color: "var(--text-3)" }}>· <span className="mono tnum" style={{ color: scales.carbon(rec.live.carbon) }}>{Math.round(rec.live.carbon)}</span> gCO₂/kWh</span>
+                )}
+              </div>
+              <div style={{ fontSize: 10.5, color: "var(--text-3)", marginTop: 2, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{rec.live.source} · {fmtLiveTime(rec.live.at)}</div>
+            </div>
+          </div>
+        )}
+
         {/* score + headline */}
         <div style={{ padding: "18px 22px", display: "flex", gap: 18, alignItems: "center", borderBottom: "1px solid var(--border)" }}>
           <ScoreRing value={rec.score} color={scoreColor} size={78} />
@@ -230,4 +252,11 @@ function firstNonNullFrom(arr: (number | null)[], start: number): number | null 
 function carbonVals(arr: (number | null)[]): number[] {
   const v = arr.filter((x): x is number => x != null);
   return v.length ? v : [200];
+}
+function fmtLiveTime(iso: string): string {
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return iso;
+  const hh = String(d.getUTCHours()).padStart(2, "0");
+  const mm = String(d.getUTCMinutes()).padStart(2, "0");
+  return `as of ${hh}:${mm} UTC`;
 }
