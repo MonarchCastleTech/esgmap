@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="docs/logo.png" alt="ESG Map logo" width="140"/>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/monarchcastletech/esgmap/master/docs/logo-dark.png"><img src="docs/logo.png" alt="ESG Map logo" width="140"></picture>
   <!-- CODEX: generate a clean product logo here — a minimalist dark-navy emblem combining a stylized globe/world-map graticule with a sustainability/leaf or energy motif; cividis-accented (teal→amber) on near-black; corporate, flat, square-safe, works at 140px. -->
 
   # ESG Map
