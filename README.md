@@ -131,3 +131,93 @@ The repo ships `.github/workflows/deploy.yml`. Push to `master`, set **Settings 
 Application code: MIT. Upstream datasets retain their own licenses — see [`DATA_SOURCES.md`](DATA_SOURCES.md) and `LICENSE`. © 2026 Monarch Castle Holdings · Ankara, Türkiye.
 
 <div align="center"><sub>🏰 Monarch Castle Holdings — turning open-source noise into lawful, verified, decision-grade intelligence.</sub></div>
+
+---
+
+<!-- repository-hygiene:start -->
+
+![Monarch Castle Technologies approved lockup](docs/brand/organization-lockup.png)
+
+Interactive world-map atlas of national sustainability indicators on real, dated open data (React + TypeScript + Vite + D3).
+
+![Lifecycle: Active](docs/lifecycle-active.svg)
+
+## Repository status
+
+Lifecycle: **Active**. The badge and this statement describe maintenance status, not service availability.
+
+## Public access
+
+[Open the published project](https://monarchcastle.tech/esgmap/)
+
+## Screenshots
+
+![ESGMap repository preview](docs/social-preview.png)
+
+The preview is maintained as a repository asset; the live interface or generated output remains authoritative.
+
+## Data and methodology
+
+See [DATA_SOURCES.md](DATA_SOURCES.md) and the implementation files in this repository. Source dates, transformation steps, and known gaps must travel with analytical outputs.
+
+## Update frequency
+
+Source-dependent. Dated indicator snapshots are rebuilt when upstream datasets publish reviewed releases.
+
+## Quick start
+
+```shell
+npm ci
+```
+
+```shell
+npm run dev
+```
+
+Run only in a trusted development environment and review repository-specific prerequisites before using networked or hardware features.
+
+## Architecture
+
+- `CITATION.cff` — repository entry point or configuration.
+- `DATA_SOURCES.md` — repository entry point or configuration.
+- `design_handoff_esgmap/` — implementation or data module.
+- `GOVERNANCE.md` — repository entry point or configuration.
+- `index.html` — repository entry point or configuration.
+- `LICENSE` — repository entry point or configuration.
+- `package-lock.json` — repository entry point or configuration.
+
+## Tests
+
+```shell
+npm run typecheck
+```
+
+```shell
+npm run build
+```
+
+## Provenance
+
+Original software history is maintained in Git. External datasets, reports, trademarks, screenshots, and assets are not relicensed by this repository; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) before reuse.
+
+## Forecast limitations
+
+This repository does not publish a guaranteed forecast. Any scenarios, scores, or forward-looking language are analytical aids, not facts or advice; review source dates and methodology before use.
+
+## Security
+
+Do not publish vulnerabilities in an issue. Use GitHub's private vulnerability-reporting flow when available, or follow the [organization security policy](https://github.com/MonarchCastleTech/.github/security/policy).
+
+## License
+
+Original repository code and documentation are available under **MIT**; see [LICENSE](LICENSE). That license does not override third-party terms documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+## Citation
+
+Use the machine-readable [CITATION.cff](CITATION.cff). Cite the specific commit and, for analytical use, record the data or model snapshot date.
+
+## Masterbrand endorsement
+
+ESGMap is a Monarch Castle Technologies project. **Part of Monarch Castle Technologies.**
+
+<!-- repository-hygiene:end -->
