@@ -109,8 +109,8 @@ export function CountryPanel({ rec, metric, scales, onClose, onPin, isPinned, pe
   const toYear = hist ? hist.years[hist.years.length - 1] : null;
 
   return (
-    <div className="slidein" style={{
-      position: "absolute", top: 0, right: 0, bottom: 0, width: 392, zIndex: 20,
+    <div className="slidein country-panel" style={{
+      position: "absolute", top: 0, right: 0, bottom: 0, width: "min(392px, 100%)", zIndex: 20,
       background: "var(--panel)", borderLeft: "1px solid var(--border)", boxShadow: "var(--shadow)",
       display: "flex", flexDirection: "column",
     }}>

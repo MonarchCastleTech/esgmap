@@ -81,21 +81,21 @@ export default function App() {
   const activeLayer = LAYERS.find((l) => l.value === metric)!;
 
   return (
-    <div style={{ display: "flex", height: "100vh", minWidth: 0 }}>
-      <a href="#esg-search" className="sr-only sr-only-focusable">Skip to search</a>
+    <div className="esg-app">
+      <a href="#esg-search" className="sr-only sr-only-focusable">Skip to map search and controls</a>
       <Sidebar view={view} setView={setView} metric={metric} setMetric={setMetric} palette={palette} setPalette={setPalette} />
-      <main style={{ position: "relative", flex: 1, minWidth: 0 }} aria-label={`World map — ${ESG.METRICS[metric].label}`}>
+      <main className="esg-main" style={{ position: "relative", flex: 1, minWidth: 0 }} aria-label={`World map — ${ESG.METRICS[metric].label}`}>
         <WorldMap metric={metric} year={year} selected={selRec ? selRec.match : null} pinned={pins}
           onSelect={onMapSelect} flyTo={flyTo} palette={palette} />
         <MapDataTable metric={metric} year={year} />
 
         {/* top-left search */}
-        <div id="esg-search" tabIndex={-1} style={{ position: "absolute", top: 18, left: 18, zIndex: 12, outline: "none" }}>
+        <div id="esg-search" className="esg-search" tabIndex={-1} style={{ position: "absolute", top: 18, left: 18, zIndex: 12, outline: "none" }}>
           <SearchBox onPick={selectRec} metric={metric} year={year} scales={scales} />
         </div>
 
         {/* active-layer chip + copy-link top-center */}
-        <div style={{ position: "absolute", top: 24, left: "50%", transform: "translateX(-50%)", zIndex: 8, display: "flex", alignItems: "center", gap: 8 }}>
+        <div className="esg-top-controls" style={{ position: "absolute", top: 24, left: "50%", transform: "translateX(-50%)", zIndex: 8, display: "flex", alignItems: "center", gap: 8 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 9, background: "rgba(19,24,21,.86)", border: "1px solid var(--border)", borderRadius: 99, padding: "7px 15px", fontSize: 12.5, boxShadow: "var(--shadow)", backdropFilter: "blur(6px)" }}>
             <Icon name={activeLayer.icon} size={14} style={{ color: "var(--accent)" }} />
             <span style={{ fontWeight: 600 }}>{ESG.METRICS[metric].label}</span>
@@ -109,13 +109,13 @@ export default function App() {
         </div>
 
         {/* bottom-left: compare bar + time slider */}
-        <div style={{ position: "absolute", left: 18, bottom: 18, zIndex: 12, display: "flex", flexDirection: "column", gap: 10, alignItems: "flex-start" }}>
+        <div className="esg-bottom-controls" style={{ position: "absolute", left: 18, bottom: 18, zIndex: 12, display: "flex", flexDirection: "column", gap: 10, alignItems: "flex-start" }}>
           <CompareBar pinned={pinnedRecs} onOpen={() => setView("compare")} onClear={() => setPins([])} />
           <TimeSlider year={year} setYear={setYear} metric={metric} />
         </div>
 
         {/* bottom-right legend (shifts when panel open) */}
-        <div style={{ position: "absolute", right: panelOpen ? 410 : 18, bottom: 18, zIndex: 12, transition: "right .32s cubic-bezier(.22,.61,.36,1)" }}>
+        <div className="esg-legend" style={{ position: "absolute", right: panelOpen ? 410 : 18, bottom: 18, zIndex: 12, transition: "right .32s cubic-bezier(.22,.61,.36,1)" }}>
           <Legend metric={metric} scales={scales} />
         </div>
 

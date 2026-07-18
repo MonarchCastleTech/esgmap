@@ -1,28 +1,30 @@
 :root {
-  --bg:        #0c100e;
-  --bg-map:    #0a161a;
-  --ocean:     #0a161a;
-  --panel:     #131815;
-  --panel-2:   #171d19;
-  --elev:      #1c231e;
-  --border:    #283029;
-  --border-2:  #323b34;
-  --text:      #e9ede9;
-  --text-2:    #aab3ac;
-  --text-3:    #8a948c; /* WCAG-AA (>=4.5:1) on the dark panels at small sizes */
+  --bg: #15130f;
+  --bg-map: #111713;
+  --ocean: #111713;
+  --panel: #191711;
+  --panel-2: #1f1c16;
+  --elev: #17140f;
+  --border: #2c2820;
+  --border-2: #463f31;
+  --text: #ece6d8;
+  --text-2: #9a9284;
+  --text-3: #7d7565;
   --no-data:   #2c352d; /* uncovered-country fill (matches design handoff token) */
-  --accent:    #5fbf7f;
-  --accent-2:  #3f8f5c;
-  --warn:      #e0a23c;
-  --bad:       #d4503e;
-  --sans: "IBM Plex Sans", system-ui, sans-serif;
-  --mono: "IBM Plex Mono", ui-monospace, monospace;
-  --sidebar-w: 248px;
-  --shadow: 0 18px 50px -12px rgba(0, 0, 0, .7);
+  --accent: #c9a24b;
+  --accent-2: #6fae7e;
+  --warn: #d8a13f;
+  --bad: #cf5b4e;
+  --serif: "Spectral", Georgia, serif;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --sidebar-w: 268px;
+  --radius: 1px;
+  --shadow: 0 18px 54px rgba(0, 0, 0, 0.24);
 }
 
 * { box-sizing: border-box; }
-html, body { margin: 0; height: 100%; }
+html, body { width: 100%; margin: 0; height: 100%; overflow-x: clip; }
 body {
   background: var(--bg);
   color: var(--text);
@@ -32,6 +34,54 @@ body {
   overflow: hidden;
 }
 #root { height: 100vh; }
+
+.esg-app {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.esg-sidebar {
+  width: var(--sidebar-w);
+  flex: 0 0 auto;
+}
+
+.esg-main {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.esg-brand-logo {
+  display: block;
+  width: 96px;
+  max-width: 42%;
+  height: 48px;
+  flex: 0 0 auto;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.esg-brand-name {
+  color: var(--text);
+  font: 600 18px/1.05 var(--serif);
+}
+
+.esg-endorsement {
+  margin-top: 5px;
+  color: var(--text-3);
+  font: 8px/1.35 var(--mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.esg-freshness a {
+  display: inline-block;
+  margin-top: 4px;
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
 
 /* scrollbars */
 ::-webkit-scrollbar { width: 9px; height: 9px; }
@@ -105,3 +155,78 @@ input:focus-visible,
 .esg-range:disabled::-webkit-slider-thumb { background: #687069; border-color: #3a443c; }
 .esg-range::-moz-range-thumb { width: 16px; height: 16px; border-radius: 50%; background: #eaf6ee;
   border: 3px solid var(--accent-2); box-shadow: 0 2px 6px rgba(0, 0, 0, .5); cursor: grab; }
+
+@media (max-width: 800px) {
+  .esg-app {
+    flex-direction: column;
+    height: 100dvh;
+    overflow-x: clip;
+  }
+
+  .esg-sidebar {
+    width: 100%;
+    max-width: 100%;
+    max-height: 36dvh;
+    flex: 0 0 36dvh;
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .esg-main {
+    width: 100%;
+    min-width: 0;
+    min-height: 64dvh;
+    flex: 1 0 64dvh !important;
+  }
+
+  .esg-search {
+    right: 74px;
+    width: auto;
+    max-width: calc(100% - 92px);
+  }
+
+  .esg-top-controls {
+    top: 72px !important;
+    left: 18px !important;
+    max-width: calc(100% - 36px);
+    transform: none !important;
+    flex-wrap: wrap;
+  }
+
+  .esg-bottom-controls {
+    right: 18px;
+    max-width: calc(100% - 36px);
+  }
+
+  .esg-legend {
+    right: 18px !important;
+    bottom: 112px !important;
+    max-width: calc(100% - 36px);
+  }
+
+  .country-panel {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .esg-sidebar {
+    max-height: 40dvh;
+    flex-basis: 40dvh;
+    padding: 14px 12px 12px !important;
+  }
+
+  .esg-main {
+    min-height: 60dvh;
+    flex-basis: 60dvh !important;
+  }
+
+  .esg-brand-logo {
+    width: 80px;
+    height: 40px;
+  }
+
+  .esg-top-controls > div {
+    max-width: 100%;
+  }
+}
