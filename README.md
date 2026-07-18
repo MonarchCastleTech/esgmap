@@ -158,7 +158,9 @@ The preview is maintained as a repository asset; the live interface or generated
 
 ## Data and methodology
 
-See [DATA_SOURCES.md](DATA_SOURCES.md) and the implementation files in this repository. Source dates, transformation steps, and known gaps must travel with analytical outputs.
+- [DATA_SOURCES.md](DATA_SOURCES.md)
+
+These repository-specific sources define the methodology or provenance boundary. Source dates, transformation steps, and known gaps must travel with analytical outputs.
 
 ## Update frequency
 
@@ -178,13 +180,8 @@ Run only in a trusted development environment and review repository-specific pre
 
 ## Architecture
 
-- `CITATION.cff` — repository entry point or configuration.
-- `DATA_SOURCES.md` — repository entry point or configuration.
-- `design_handoff_esgmap/` — implementation or data module.
-- `GOVERNANCE.md` — repository entry point or configuration.
-- `index.html` — repository entry point or configuration.
-- `LICENSE` — repository entry point or configuration.
-- `package-lock.json` — repository entry point or configuration.
+- `src/` — repository-specific implementation, data, or configuration boundary.
+- `scripts/` — repository-specific implementation, data, or configuration boundary.
 
 ## Tests
 
