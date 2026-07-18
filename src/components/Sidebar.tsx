@@ -33,14 +33,13 @@ export function Sidebar({ view, setView, metric, setMetric, palette, setPalette 
   setPalette: (p: Palette) => void;
 }) {
   return (
-    <aside style={{ width: "var(--sidebar-w)", flex: "0 0 auto", background: "var(--panel)", borderRight: "1px solid var(--border)", display: "flex", flexDirection: "column", padding: "20px 16px 16px", overflowY: "auto", minHeight: 0 }}>
-      <div style={{ display: "flex", alignItems: "center", gap: 11, padding: "2px 6px 20px" }}>
-        <div style={{ width: 34, height: 34, borderRadius: 9, background: "linear-gradient(150deg,#2f9e57,#1f6b3c)", display: "grid", placeItems: "center", boxShadow: "0 4px 14px -4px rgba(47,158,87,.6)" }}>
-          <Icon name="leaf" size={19} style={{ color: "#eafff0" }} />
-        </div>
+    <aside className="esg-sidebar" style={{ background: "var(--panel)", borderRight: "1px solid var(--border)", display: "flex", flexDirection: "column", padding: "20px 16px 16px", overflowY: "auto", minHeight: 0 }}>
+      <div className="esg-brand" style={{ display: "flex", alignItems: "center", gap: 14, padding: "2px 6px 20px" }}>
+        <img src={`${import.meta.env.BASE_URL}logo.png`} alt="ESGMap logo" className="esg-brand-logo" />
         <div>
-          <div style={{ fontWeight: 700, fontSize: 16, letterSpacing: "-.01em" }}>ESGMap</div>
+          <div className="esg-brand-name">ESGMap</div>
           <div style={{ fontSize: 10.5, color: "var(--text-3)", letterSpacing: ".02em" }}>Global Sustainability Atlas</div>
+          <div className="esg-endorsement">Part of Monarch Castle Technologies.</div>
         </div>
       </div>
 
@@ -107,7 +106,7 @@ export function Sidebar({ view, setView, metric, setMetric, palette, setPalette 
         </div>
       </div>
 
-      <div style={{ padding: "0 6px", fontSize: 10.5, color: "var(--text-3)", lineHeight: 1.55 }}>
+      <div className="esg-freshness" role="status" aria-live="polite" style={{ padding: "0 6px", fontSize: 10.5, color: "var(--text-3)", lineHeight: 1.55 }}>
         {ESG.LIVE_COUNT > 0 ? (
           <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 4 }}>
             <span style={{ position: "relative", width: 6, height: 6 }}>
@@ -119,10 +118,13 @@ export function Sidebar({ view, setView, metric, setMetric, palette, setPalette 
         ) : (
           <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 4 }}>
             <span style={{ width: 6, height: 6, borderRadius: 99, background: "var(--accent)" }} />
-            Open data · {fmtDate(ESG.META.generatedAt)}
+            Dataset updated · {fmtDate(ESG.META.generatedAt)}
           </div>
         )}
-        Edition {ESG.YEAR_MAX} · {ESG.META.territories} territories
+        <div>Edition {ESG.YEAR_MAX} · {ESG.META.territories} territories</div>
+        <div>Annual indicators and optional live overlays are dated separately.</div>
+        <a href="https://github.com/MonarchCastleTech/esgmap/blob/master/DATA_SOURCES.md"
+          target="_blank" rel="noopener noreferrer">Source register · DATA_SOURCES.md</a>
         <div style={{ marginTop: 2, fontFamily: "var(--mono)", fontSize: 9.5, opacity: 0.85 }} title={`content hash ${ESG.META.contentHash}`}>
           v{ESG.META.version}{ESG.META.gitSha ? ` · ${ESG.META.gitSha}` : ""}
         </div>

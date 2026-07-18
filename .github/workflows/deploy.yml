@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main, master]
+    branches: [master]
   workflow_dispatch:
   # Hourly: refresh the near-real-time live overlay and redeploy.
   schedule:

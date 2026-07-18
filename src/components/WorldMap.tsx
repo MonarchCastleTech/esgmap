@@ -284,7 +284,8 @@ export function WorldMap(props: WorldMapProps) {
   const M = ESG.METRICS[metric];
 
   return (
-    <div ref={wrapRef} style={{ position: "absolute", inset: 0, background: "var(--bg-map)", overflow: "hidden" }}>
+    <div ref={wrapRef} id="esg-world-map" role="region" aria-label="Interactive world sustainability map"
+      style={{ position: "absolute", inset: 0, background: "var(--bg-map)", overflow: "hidden" }}>
       <svg ref={svgRef} width="100%" height="100%" style={{ display: "block", cursor: "grab" }} aria-hidden="true">
         <defs>
           <clipPath id="esg-mapclip"><rect ref={clipRectRef} x={0} y={0} width={0} height={0} /></clipPath>
@@ -295,13 +296,14 @@ export function WorldMap(props: WorldMapProps) {
       </svg>
 
       {/* zoom controls */}
-      <div style={{ position: "absolute", top: 18, right: 18, display: "flex", flexDirection: "column", gap: 8 }}>
+      <div className="map-controls" role="group" aria-label="Map zoom controls"
+        style={{ position: "absolute", top: 18, right: 18, display: "flex", flexDirection: "column", gap: 8 }}>
         <div style={{ display: "flex", flexDirection: "column", background: "var(--panel)", border: "1px solid var(--border)", borderRadius: 10, overflow: "hidden", boxShadow: "var(--shadow)" }}>
-          <button aria-label="Zoom in" onClick={() => zoomBy(1.5)} style={ZBTN}><Icon name="plus" size={17} /></button>
+          <button aria-label="Zoom in" aria-controls="esg-world-map" onClick={() => zoomBy(1.5)} style={ZBTN}><Icon name="plus" size={17} /></button>
           <div style={{ height: 1, background: "var(--border)" }} />
-          <button aria-label="Zoom out" onClick={() => zoomBy(1 / 1.5)} style={ZBTN}><Icon name="minus" size={17} /></button>
+          <button aria-label="Zoom out" aria-controls="esg-world-map" onClick={() => zoomBy(1 / 1.5)} style={ZBTN}><Icon name="minus" size={17} /></button>
         </div>
-        <button aria-label="Reset view" onClick={resetZoom} title="Reset view" style={{ ...ZBTN, border: "1px solid var(--border)", borderRadius: 10, background: "var(--panel)", boxShadow: "var(--shadow)" }}><Icon name="globe" size={17} /></button>
+        <button aria-label="Reset view" aria-controls="esg-world-map" onClick={resetZoom} title="Reset view" style={{ ...ZBTN, border: "1px solid var(--border)", borderRadius: 10, background: "var(--panel)", boxShadow: "var(--shadow)" }}><Icon name="globe" size={17} /></button>
       </div>
 
       {/* tooltip */}
