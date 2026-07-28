@@ -19,7 +19,7 @@ test("ESGMap uses the approved local product logo and exact masterbrand endorsem
   assert.match(sidebar, /alt="ESGMap logo"/);
   assert.ok(sidebar.includes("Part of Monarch Castle Technologies."));
   const publicLogo = readFileSync(resolve(root, "public/logo.png"));
-  const approvedLogo = readFileSync(resolve(root, "docs/logo.png"));
+  const approvedLogo = readFileSync(resolve(root, "docs/logo-dark.png"));
   assert.equal(
     createHash("sha256").update(publicLogo).digest("hex"),
     createHash("sha256").update(approvedLogo).digest("hex"),
