@@ -5,7 +5,7 @@ type: dataset
 authors:
   - name: "ESGMap contributors"
 repository-code: "https://github.com/MonarchCastleTech/esgmap"
-url: "https://monarchcastle.tech/esgmap/"
+url: "https://monarchcastletech.github.io/esgmap/"
 abstract: >-
   An interactive world-map atlas of national sustainability indicators wired
   to dated open data. Application code is MIT; bundled datasets retain their

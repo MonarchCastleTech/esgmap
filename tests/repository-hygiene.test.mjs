@@ -19,7 +19,7 @@ test("MonarchCastleTech/esgmap exposes the complete repository documentation con
   assert.ok(match, "README must include the managed repository-hygiene block");
   assert.ok(contract.includes("Interactive world-map atlas of national sustainability indicators on real, dated open data (React + TypeScript + Vite + D3)."), "README purpose must match the canonical registry");
   assert.match(contract, /lifecycle-active/);
-  assert.ok(contract.includes("https://monarchcastle.tech/esgmap/"));
+  assert.ok(contract.includes("https://monarchcastletech.github.io/esgmap/"));
   for (const heading of expectedHeadings) assert.ok(contract.includes(`## ${heading}`), `missing heading: ${heading}`);
   for (const evidence of methodologyEvidence) {
     assert.ok(existsSync(resolve(root, evidence)), `missing methodology evidence: ${evidence}`);
