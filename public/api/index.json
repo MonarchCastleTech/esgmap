@@ -1,9 +1,9 @@
 {
   "dataset": "ESGMap",
-  "version": "2025.bc8f6c8",
-  "generatedAt": "2026-06-09",
+  "version": "2025.5dd84cc",
+  "generatedAt": "2026-08-24",
   "license": "CC BY 4.0",
-  "base": "https://akgularda.github.io/esgmap/api/",
+  "base": "https://monarchcastletech.github.io/esgmap/api/",
   "endpoints": {
     "countries": "../downloads/esgmap-wide.json",
     "country": [

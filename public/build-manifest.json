@@ -1,10 +1,10 @@
 {
   "dataset": "ESGMap",
-  "version": "2025.bc8f6c8",
-  "contentHash": "bc8f6c856d92b7d8fac8bfe4bb236dbca4d6fea4deca1f1fcab835a2ad661373",
-  "gitSha": "84e1e86",
+  "version": "2025.5dd84cc",
+  "contentHash": "5dd84ccbe10250496466dfb8798b19aa9a13bae50670c6ad08ed5da13c764373",
+  "gitSha": "14a59ab",
   "nodeVersion": "v24.11.0",
-  "generatedAt": "2026-06-09",
+  "generatedAt": "2026-08-24",
   "yearMin": 2000,
   "yearMax": 2025,
   "territories": 94,
@@ -31,35 +31,35 @@
       "id": "owid-energy",
       "label": "Our World in Data — Energy",
       "url": "https://github.com/owid/energy-data",
-      "retrievedAt": "2026-06-09",
+      "retrievedAt": "2026-08-24",
       "license": "Creative Commons BY 4.0"
     },
     {
       "id": "owid-co2",
       "label": "Our World in Data — CO₂ and Greenhouse Gas Emissions",
       "url": "https://github.com/owid/co2-data",
-      "retrievedAt": "2026-06-09",
+      "retrievedAt": "2026-08-24",
       "license": "Creative Commons BY 4.0"
     },
     {
       "id": "wb-forest",
       "label": "World Bank — Forest area (% of land), FAO FRA",
       "url": "https://data.worldbank.org/indicator/AG.LND.FRST.ZS",
-      "retrievedAt": "2026-06-09",
+      "retrievedAt": "2026-08-24",
       "license": "Creative Commons BY 4.0"
     },
     {
       "id": "wb-pm25",
       "label": "World Bank — PM2.5 mean annual exposure (WHO / IHME)",
       "url": "https://data.worldbank.org/indicator/EN.ATM.PM25.MC.M3",
-      "retrievedAt": "2026-06-09",
+      "retrievedAt": "2026-08-24",
       "license": "Creative Commons BY 4.0"
     },
     {
       "id": "esgmap-curated",
       "label": "ESGMap curated policy layer — UNFCCC NDC Registry; Climate Watch (WRI); Net Zero Tracker (Oxford/ECIU); IFRS Foundation jurisdiction profiles; IEA Global EV Outlook; ND-GAIN Country Index",
-      "url": "https://github.com/",
-      "retrievedAt": "2026-06-09",
+      "url": "https://github.com/MonarchCastleTech/esgmap/blob/master/scripts/country-meta.json",
+      "retrievedAt": "2026-08-24",
       "license": "Compiled by ESGMap from cited public sources"
     }
   ],

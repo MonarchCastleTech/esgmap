@@ -1,5 +1,5 @@
-# ESGMap 2025.bc8f6c8 · generated 2026-06-09 · edition year 2025 · CC BY 4.0
-# Sources: Our World in Data — Energy (retrieved 2026-06-09); Our World in Data — CO₂ and Greenhouse Gas Emissions (retrieved 2026-06-09); World Bank — Forest area (% of land), FAO FRA (retrieved 2026-06-09); World Bank — PM2.5 mean annual exposure (WHO / IHME) (retrieved 2026-06-09); ESGMap curated policy layer — UNFCCC NDC Registry; Climate Watch (WRI); Net Zero Tracker (Oxford/ECIU); IFRS Foundation jurisdiction profiles; IEA Global EV Outlook; ND-GAIN Country Index (retrieved 2026-06-09)
+# ESGMap 2025.5dd84cc · generated 2026-08-24 · edition year 2025 · CC BY 4.0
+# Sources: Our World in Data — Energy (retrieved 2026-08-24); Our World in Data — CO₂ and Greenhouse Gas Emissions (retrieved 2026-08-24); World Bank — Forest area (% of land), FAO FRA (retrieved 2026-08-24); World Bank — PM2.5 mean annual exposure (WHO / IHME) (retrieved 2026-08-24); ESGMap curated policy layer — UNFCCC NDC Registry; Climate Watch (WRI); Net Zero Tracker (Oxford/ECIU); IFRS Foundation jurisdiction profiles; IEA Global EV Outlook; ND-GAIN Country Index (retrieved 2026-08-24)
 # 'NA' = no upstream value (never fabricated / never 0).
 iso3,name,year,metric,value,interpolated
 AFG,Afghanistan,2000,renewable,64.6,0

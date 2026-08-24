@@ -6,7 +6,7 @@ import { citation, attributionBlock, type CiteFormat } from "../lib/cite";
 import { fmtDate } from "../lib/format";
 
 const BASE = import.meta.env.BASE_URL;
-const datasetUrl = () => (typeof location !== "undefined" ? location.origin + location.pathname : "https://akgularda.github.io/esgmap/");
+const datasetUrl = () => (typeof location !== "undefined" ? location.origin + location.pathname : "https://monarchcastletech.github.io/esgmap/");
 
 function Def({ t, d, src }: { t: string; d: string; src?: string }) {
   return (

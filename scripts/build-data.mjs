@@ -67,7 +67,7 @@ const SOURCES = {
       "ESGMap curated policy layer — UNFCCC NDC Registry; Climate Watch (WRI); " +
       "Net Zero Tracker (Oxford/ECIU); IFRS Foundation jurisdiction profiles; " +
       "IEA Global EV Outlook; ND-GAIN Country Index",
-    url: "https://github.com/",
+    url: "https://github.com/MonarchCastleTech/esgmap/blob/master/scripts/country-meta.json",
     license: "Compiled by ESGMap from cited public sources",
   },
 };

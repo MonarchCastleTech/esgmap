@@ -1,5 +1,5 @@
-# ESGMap 2025.bc8f6c8 · generated 2026-06-09 · edition year 2025 · CC BY 4.0
-# Sources: Our World in Data — Energy (retrieved 2026-06-09); Our World in Data — CO₂ and Greenhouse Gas Emissions (retrieved 2026-06-09); World Bank — Forest area (% of land), FAO FRA (retrieved 2026-06-09); World Bank — PM2.5 mean annual exposure (WHO / IHME) (retrieved 2026-06-09); ESGMap curated policy layer — UNFCCC NDC Registry; Climate Watch (WRI); Net Zero Tracker (Oxford/ECIU); IFRS Foundation jurisdiction profiles; IEA Global EV Outlook; ND-GAIN Country Index (retrieved 2026-06-09)
+# ESGMap 2025.5dd84cc · generated 2026-08-24 · edition year 2025 · CC BY 4.0
+# Sources: Our World in Data — Energy (retrieved 2026-08-24); Our World in Data — CO₂ and Greenhouse Gas Emissions (retrieved 2026-08-24); World Bank — Forest area (% of land), FAO FRA (retrieved 2026-08-24); World Bank — PM2.5 mean annual exposure (WHO / IHME) (retrieved 2026-08-24); ESGMap curated policy layer — UNFCCC NDC Registry; Climate Watch (WRI); Net Zero Tracker (Oxford/ECIU); IFRS Foundation jurisdiction profiles; IEA Global EV Outlook; ND-GAIN Country Index (retrieved 2026-08-24)
 # 'NA' = no upstream value (never fabricated / never 0).
 iso3,name,region,metric,value,year,unit,source
 AFG,Afghanistan,Asia,renewable,86.9,2024,%,owid-energy
@@ -7,7 +7,7 @@ AFG,Afghanistan,Asia,carbon,131,2024,gCO2/kWh,owid-energy
 AFG,Afghanistan,Asia,co2pc,0.3,2024,t/yr,owid-co2
 AFG,Afghanistan,Asia,energy,23,2024,kWh/yr,owid-energy
 AFG,Afghanistan,Asia,forest,1.9,2023,% land,wb-forest
-AFG,Afghanistan,Asia,pm25,46.1,2020,µg/m³,wb-pm25
+AFG,Afghanistan,Asia,pm25,37.9,2023,µg/m³,wb-pm25
 AFG,Afghanistan,Asia,climate,78,NA,/100,esgmap-curated
 AFG,Afghanistan,Asia,ev,NA,NA,%,esgmap-curated
 AFG,Afghanistan,Asia,score,81,NA,/100,derived
@@ -17,7 +17,7 @@ DZA,Algeria,Africa,carbon,633,2024,gCO2/kWh,owid-energy
 DZA,Algeria,Africa,co2pc,4.2,2024,t/yr,owid-co2
 DZA,Algeria,Africa,energy,2058,2024,kWh/yr,owid-energy
 DZA,Algeria,Africa,forest,0.8,2023,% land,wb-forest
-DZA,Algeria,Africa,pm25,25.6,2020,µg/m³,wb-pm25
+DZA,Algeria,Africa,pm25,16.5,2023,µg/m³,wb-pm25
 DZA,Algeria,Africa,climate,50,NA,/100,esgmap-curated
 DZA,Algeria,Africa,ev,NA,NA,%,esgmap-curated
 DZA,Algeria,Africa,score,32,NA,/100,derived
@@ -27,7 +27,7 @@ AGO,Angola,Africa,carbon,185,2024,gCO2/kWh,owid-energy
 AGO,Angola,Africa,co2pc,0.6,2024,t/yr,owid-co2
 AGO,Angola,Africa,energy,411,2024,kWh/yr,owid-energy
 AGO,Angola,Africa,forest,52.1,2023,% land,wb-forest
-AGO,Angola,Africa,pm25,25.1,2020,µg/m³,wb-pm25
+AGO,Angola,Africa,pm25,19.9,2023,µg/m³,wb-pm25
 AGO,Angola,Africa,climate,62,NA,/100,esgmap-curated
 AGO,Angola,Africa,ev,NA,NA,%,esgmap-curated
 AGO,Angola,Africa,score,76,NA,/100,derived
@@ -37,7 +37,7 @@ ARG,Argentina,Americas,carbon,346,2025,gCO2/kWh,owid-energy
 ARG,Argentina,Americas,co2pc,3.7,2024,t/yr,owid-co2
 ARG,Argentina,Americas,energy,3340,2025,kWh/yr,owid-energy
 ARG,Argentina,Americas,forest,10.3,2023,% land,wb-forest
-ARG,Argentina,Americas,pm25,14.9,2020,µg/m³,wb-pm25
+ARG,Argentina,Americas,pm25,14.3,2023,µg/m³,wb-pm25
 ARG,Argentina,Americas,climate,38,NA,/100,esgmap-curated
 ARG,Argentina,Americas,ev,1,NA,%,esgmap-curated
 ARG,Argentina,Americas,score,56,NA,/100,derived
@@ -47,7 +47,7 @@ AUS,Australia,Oceania,carbon,525,2025,gCO2/kWh,owid-energy
 AUS,Australia,Oceania,co2pc,14.5,2024,t/yr,owid-co2
 AUS,Australia,Oceania,energy,10615,2025,kWh/yr,owid-energy
 AUS,Australia,Oceania,forest,17.4,2023,% land,wb-forest
-AUS,Australia,Oceania,pm25,8.3,2020,µg/m³,wb-pm25
+AUS,Australia,Oceania,pm25,6.4,2023,µg/m³,wb-pm25
 AUS,Australia,Oceania,climate,38,NA,/100,esgmap-curated
 AUS,Australia,Oceania,ev,8,NA,%,esgmap-curated
 AUS,Australia,Oceania,score,48,NA,/100,derived
@@ -57,7 +57,7 @@ AUT,Austria,Europe,carbon,117,2025,gCO2/kWh,owid-energy
 AUT,Austria,Europe,co2pc,6.2,2024,t/yr,owid-co2
 AUT,Austria,Europe,energy,8034,2025,kWh/yr,owid-energy
 AUT,Austria,Europe,forest,47.2,2023,% land,wb-forest
-AUT,Austria,Europe,pm25,10.9,2020,µg/m³,wb-pm25
+AUT,Austria,Europe,pm25,10,2023,µg/m³,wb-pm25
 AUT,Austria,Europe,climate,26,NA,/100,esgmap-curated
 AUT,Austria,Europe,ev,20,NA,%,esgmap-curated
 AUT,Austria,Europe,score,82,NA,/100,derived
@@ -67,7 +67,7 @@ AZE,Azerbaijan,Eurasia,carbon,632,2025,gCO2/kWh,owid-energy
 AZE,Azerbaijan,Eurasia,co2pc,3.9,2024,t/yr,owid-co2
 AZE,Azerbaijan,Eurasia,energy,2702,2025,kWh/yr,owid-energy
 AZE,Azerbaijan,Eurasia,forest,14.1,2023,% land,wb-forest
-AZE,Azerbaijan,Eurasia,pm25,21.7,2020,µg/m³,wb-pm25
+AZE,Azerbaijan,Eurasia,pm25,23.7,2023,µg/m³,wb-pm25
 AZE,Azerbaijan,Eurasia,climate,45,NA,/100,esgmap-curated
 AZE,Azerbaijan,Eurasia,ev,NA,NA,%,esgmap-curated
 AZE,Azerbaijan,Eurasia,score,37,NA,/100,derived
@@ -77,7 +77,7 @@ BGD,Bangladesh,Asia,carbon,696,2025,gCO2/kWh,owid-energy
 BGD,Bangladesh,Asia,co2pc,0.6,2024,t/yr,owid-co2
 BGD,Bangladesh,Asia,energy,589,2025,kWh/yr,owid-energy
 BGD,Bangladesh,Asia,forest,14.5,2023,% land,wb-forest
-BGD,Bangladesh,Asia,pm25,42.4,2020,µg/m³,wb-pm25
+BGD,Bangladesh,Asia,pm25,69.3,2023,µg/m³,wb-pm25
 BGD,Bangladesh,Asia,climate,75,NA,/100,esgmap-curated
 BGD,Bangladesh,Asia,ev,0.5,NA,%,esgmap-curated
 BGD,Bangladesh,Asia,score,31,NA,/100,derived
@@ -87,7 +87,7 @@ BLR,Belarus,Europe,carbon,309,2025,gCO2/kWh,owid-energy
 BLR,Belarus,Europe,co2pc,6.2,2024,t/yr,owid-co2
 BLR,Belarus,Europe,energy,5154,2025,kWh/yr,owid-energy
 BLR,Belarus,Europe,forest,43.4,2023,% land,wb-forest
-BLR,Belarus,Europe,pm25,14.6,2020,µg/m³,wb-pm25
+BLR,Belarus,Europe,pm25,12,2023,µg/m³,wb-pm25
 BLR,Belarus,Europe,climate,34,NA,/100,esgmap-curated
 BLR,Belarus,Europe,ev,NA,NA,%,esgmap-curated
 BLR,Belarus,Europe,score,45,NA,/100,derived
@@ -97,7 +97,7 @@ BEL,Belgium,Europe,carbon,150,2025,gCO2/kWh,owid-energy
 BEL,Belgium,Europe,co2pc,7.3,2024,t/yr,owid-co2
 BEL,Belgium,Europe,energy,6199,2025,kWh/yr,owid-energy
 BEL,Belgium,Europe,forest,22.6,2023,% land,wb-forest
-BEL,Belgium,Europe,pm25,11.2,2020,µg/m³,wb-pm25
+BEL,Belgium,Europe,pm25,8.4,2023,µg/m³,wb-pm25
 BEL,Belgium,Europe,climate,28,NA,/100,esgmap-curated
 BEL,Belgium,Europe,ev,28,NA,%,esgmap-curated
 BEL,Belgium,Europe,score,66,NA,/100,derived
@@ -107,7 +107,7 @@ BOL,Bolivia,Americas,carbon,481,2025,gCO2/kWh,owid-energy
 BOL,Bolivia,Americas,co2pc,2.3,2024,t/yr,owid-co2
 BOL,Bolivia,Americas,energy,1083,2025,kWh/yr,owid-energy
 BOL,Bolivia,Americas,forest,46.3,2023,% land,wb-forest
-BOL,Bolivia,Americas,pm25,22.9,2020,µg/m³,wb-pm25
+BOL,Bolivia,Americas,pm25,28.1,2023,µg/m³,wb-pm25
 BOL,Bolivia,Americas,climate,58,NA,/100,esgmap-curated
 BOL,Bolivia,Americas,ev,NA,NA,%,esgmap-curated
 BOL,Bolivia,Americas,score,51,NA,/100,derived
@@ -117,7 +117,7 @@ BRA,Brazil,Americas,carbon,110,2025,gCO2/kWh,owid-energy
 BRA,Brazil,Americas,co2pc,2.3,2024,t/yr,owid-co2
 BRA,Brazil,Americas,energy,3527,2025,kWh/yr,owid-energy
 BRA,Brazil,Americas,forest,59,2023,% land,wb-forest
-BRA,Brazil,Americas,pm25,12.2,2020,µg/m³,wb-pm25
+BRA,Brazil,Americas,pm25,13.4,2023,µg/m³,wb-pm25
 BRA,Brazil,Americas,climate,42,NA,/100,esgmap-curated
 BRA,Brazil,Americas,ev,3,NA,%,esgmap-curated
 BRA,Brazil,Americas,score,85,NA,/100,derived
@@ -127,7 +127,7 @@ BGR,Bulgaria,Europe,carbon,276,2025,gCO2/kWh,owid-energy
 BGR,Bulgaria,Europe,co2pc,4.7,2024,t/yr,owid-co2
 BGR,Bulgaria,Europe,energy,5653,2025,kWh/yr,owid-energy
 BGR,Bulgaria,Europe,forest,36.2,2023,% land,wb-forest
-BGR,Bulgaria,Europe,pm25,17.1,2020,µg/m³,wb-pm25
+BGR,Bulgaria,Europe,pm25,19.7,2023,µg/m³,wb-pm25
 BGR,Bulgaria,Europe,climate,36,NA,/100,esgmap-curated
 BGR,Bulgaria,Europe,ev,NA,NA,%,esgmap-curated
 BGR,Bulgaria,Europe,score,57,NA,/100,derived
@@ -137,7 +137,7 @@ CAN,Canada,Americas,carbon,191,2025,gCO2/kWh,owid-energy
 CAN,Canada,Americas,co2pc,13.4,2024,t/yr,owid-co2
 CAN,Canada,Americas,energy,16259,2025,kWh/yr,owid-energy
 CAN,Canada,Americas,forest,39.5,2023,% land,wb-forest
-CAN,Canada,Americas,pm25,6.6,2020,µg/m³,wb-pm25
+CAN,Canada,Americas,pm25,6.6,2023,µg/m³,wb-pm25
 CAN,Canada,Americas,climate,26,NA,/100,esgmap-curated
 CAN,Canada,Americas,ev,13,NA,%,esgmap-curated
 CAN,Canada,Americas,score,66,NA,/100,derived
@@ -147,7 +147,7 @@ CHL,Chile,Americas,carbon,289,2025,gCO2/kWh,owid-energy
 CHL,Chile,Americas,co2pc,4,2024,t/yr,owid-co2
 CHL,Chile,Americas,energy,4456,2025,kWh/yr,owid-energy
 CHL,Chile,Americas,forest,25,2023,% land,wb-forest
-CHL,Chile,Americas,pm25,23.3,2020,µg/m³,wb-pm25
+CHL,Chile,Americas,pm25,23.1,2023,µg/m³,wb-pm25
 CHL,Chile,Americas,climate,40,NA,/100,esgmap-curated
 CHL,Chile,Americas,ev,4,NA,%,esgmap-curated
 CHL,Chile,Americas,score,69,NA,/100,derived
@@ -157,7 +157,7 @@ CHN,China,Asia,carbon,525,2025,gCO2/kWh,owid-energy
 CHN,China,Asia,co2pc,8.7,2024,t/yr,owid-co2
 CHN,China,Asia,energy,7474,2025,kWh/yr,owid-energy
 CHN,China,Asia,forest,24,2023,% land,wb-forest
-CHN,China,Asia,pm25,34.8,2020,µg/m³,wb-pm25
+CHN,China,Asia,pm25,32,2023,µg/m³,wb-pm25
 CHN,China,Asia,climate,45,NA,/100,esgmap-curated
 CHN,China,Asia,ev,38,NA,%,esgmap-curated
 CHN,China,Asia,score,48,NA,/100,derived
@@ -167,7 +167,7 @@ COL,Colombia,Americas,carbon,187,2025,gCO2/kWh,owid-energy
 COL,Colombia,Americas,co2pc,1.8,2024,t/yr,owid-co2
 COL,Colombia,Americas,energy,1691,2025,kWh/yr,owid-energy
 COL,Colombia,Americas,forest,52.8,2023,% land,wb-forest
-COL,Colombia,Americas,pm25,14.2,2020,µg/m³,wb-pm25
+COL,Colombia,Americas,pm25,18.4,2023,µg/m³,wb-pm25
 COL,Colombia,Americas,climate,48,NA,/100,esgmap-curated
 COL,Colombia,Americas,ev,2,NA,%,esgmap-curated
 COL,Colombia,Americas,score,76,NA,/100,derived
@@ -177,7 +177,7 @@ HRV,Croatia,Europe,carbon,159,2025,gCO2/kWh,owid-energy
 HRV,Croatia,Europe,co2pc,4.8,2024,t/yr,owid-co2
 HRV,Croatia,Europe,energy,3820,2025,kWh/yr,owid-energy
 HRV,Croatia,Europe,forest,34.8,2023,% land,wb-forest
-HRV,Croatia,Europe,pm25,16.1,2020,µg/m³,wb-pm25
+HRV,Croatia,Europe,pm25,15.8,2023,µg/m³,wb-pm25
 HRV,Croatia,Europe,climate,33,NA,/100,esgmap-curated
 HRV,Croatia,Europe,ev,NA,NA,%,esgmap-curated
 HRV,Croatia,Europe,score,77,NA,/100,derived
@@ -187,7 +187,7 @@ CUB,Cuba,Americas,carbon,643,2024,gCO2/kWh,owid-energy
 CUB,Cuba,Americas,co2pc,2.2,2024,t/yr,owid-co2
 CUB,Cuba,Americas,energy,1770,2024,kWh/yr,owid-energy
 CUB,Cuba,Americas,forest,31.2,2023,% land,wb-forest
-CUB,Cuba,Americas,pm25,21.2,2020,µg/m³,wb-pm25
+CUB,Cuba,Americas,pm25,9.4,2023,µg/m³,wb-pm25
 CUB,Cuba,Americas,climate,50,NA,/100,esgmap-curated
 CUB,Cuba,Americas,ev,NA,NA,%,esgmap-curated
 CUB,Cuba,Americas,score,35,NA,/100,derived
@@ -197,7 +197,7 @@ CZE,Czechia,Europe,carbon,401,2025,gCO2/kWh,owid-energy
 CZE,Czechia,Europe,co2pc,7,2024,t/yr,owid-co2
 CZE,Czechia,Europe,energy,7116,2025,kWh/yr,owid-energy
 CZE,Czechia,Europe,forest,34.8,2023,% land,wb-forest
-CZE,Czechia,Europe,pm25,14.1,2020,µg/m³,wb-pm25
+CZE,Czechia,Europe,pm25,12.7,2023,µg/m³,wb-pm25
 CZE,Czechia,Europe,climate,31,NA,/100,esgmap-curated
 CZE,Czechia,Europe,ev,5,NA,%,esgmap-curated
 CZE,Czechia,Europe,score,51,NA,/100,derived
@@ -207,7 +207,7 @@ COD,Dem. Rep. Congo,Africa,carbon,28,2024,gCO2/kWh,owid-energy
 COD,Dem. Rep. Congo,Africa,co2pc,0.1,2024,t/yr,owid-co2
 COD,Dem. Rep. Congo,Africa,energy,146,2024,kWh/yr,owid-energy
 COD,Dem. Rep. Congo,Africa,forest,54.2,2023,% land,wb-forest
-COD,Dem. Rep. Congo,Africa,pm25,26.6,2020,µg/m³,wb-pm25
+COD,Dem. Rep. Congo,Africa,pm25,35.8,2023,µg/m³,wb-pm25
 COD,Dem. Rep. Congo,Africa,climate,70,NA,/100,esgmap-curated
 COD,Dem. Rep. Congo,Africa,ev,NA,NA,%,esgmap-curated
 COD,Dem. Rep. Congo,Africa,score,91,NA,/100,derived
@@ -217,7 +217,7 @@ DNK,Denmark,Europe,carbon,114,2025,gCO2/kWh,owid-energy
 DNK,Denmark,Europe,co2pc,4.7,2024,t/yr,owid-co2
 DNK,Denmark,Europe,energy,5548,2025,kWh/yr,owid-energy
 DNK,Denmark,Europe,forest,15.8,2023,% land,wb-forest
-DNK,Denmark,Europe,pm25,9.1,2020,µg/m³,wb-pm25
+DNK,Denmark,Europe,pm25,7.5,2023,µg/m³,wb-pm25
 DNK,Denmark,Europe,climate,22,NA,/100,esgmap-curated
 DNK,Denmark,Europe,ev,39,NA,%,esgmap-curated
 DNK,Denmark,Europe,score,86,NA,/100,derived
@@ -227,7 +227,7 @@ ECU,Ecuador,Americas,carbon,159,2025,gCO2/kWh,owid-energy
 ECU,Ecuador,Americas,co2pc,2.5,2024,t/yr,owid-co2
 ECU,Ecuador,Americas,energy,2001,2025,kWh/yr,owid-energy
 ECU,Ecuador,Americas,forest,49.5,2023,% land,wb-forest
-ECU,Ecuador,Americas,pm25,16.7,2020,µg/m³,wb-pm25
+ECU,Ecuador,Americas,pm25,18.6,2023,µg/m³,wb-pm25
 ECU,Ecuador,Americas,climate,50,NA,/100,esgmap-curated
 ECU,Ecuador,Americas,ev,NA,NA,%,esgmap-curated
 ECU,Ecuador,Americas,score,79,NA,/100,derived
@@ -237,7 +237,7 @@ EGY,Egypt,Africa,carbon,563,2025,gCO2/kWh,owid-energy
 EGY,Egypt,Africa,co2pc,2.2,2024,t/yr,owid-co2
 EGY,Egypt,Africa,energy,2076,2025,kWh/yr,owid-energy
 EGY,Egypt,Africa,forest,0,2023,% land,wb-forest
-EGY,Egypt,Africa,pm25,54.9,2020,µg/m³,wb-pm25
+EGY,Egypt,Africa,pm25,43.1,2023,µg/m³,wb-pm25
 EGY,Egypt,Africa,climate,58,NA,/100,esgmap-curated
 EGY,Egypt,Africa,ev,0.5,NA,%,esgmap-curated
 EGY,Egypt,Africa,score,39,NA,/100,derived
@@ -247,7 +247,7 @@ ETH,Ethiopia,Africa,carbon,23,2025,gCO2/kWh,owid-energy
 ETH,Ethiopia,Africa,co2pc,0.1,2024,t/yr,owid-co2
 ETH,Ethiopia,Africa,energy,246,2025,kWh/yr,owid-energy
 ETH,Ethiopia,Africa,forest,14.9,2023,% land,wb-forest
-ETH,Ethiopia,Africa,pm25,27.3,2020,µg/m³,wb-pm25
+ETH,Ethiopia,Africa,pm25,23.8,2023,µg/m³,wb-pm25
 ETH,Ethiopia,Africa,climate,68,NA,/100,esgmap-curated
 ETH,Ethiopia,Africa,ev,NA,NA,%,esgmap-curated
 ETH,Ethiopia,Africa,score,91,NA,/100,derived
@@ -257,7 +257,7 @@ FIN,Finland,Europe,carbon,57,2025,gCO2/kWh,owid-energy
 FIN,Finland,Europe,co2pc,5.3,2024,t/yr,owid-co2
 FIN,Finland,Europe,energy,14635,2025,kWh/yr,owid-energy
 FIN,Finland,Europe,forest,73.7,2023,% land,wb-forest
-FIN,Finland,Europe,pm25,4.9,2020,µg/m³,wb-pm25
+FIN,Finland,Europe,pm25,4.6,2023,µg/m³,wb-pm25
 FIN,Finland,Europe,climate,20,NA,/100,esgmap-curated
 FIN,Finland,Europe,ev,38,NA,%,esgmap-curated
 FIN,Finland,Europe,score,78,NA,/100,derived
@@ -267,7 +267,7 @@ FRA,France,Europe,carbon,41,2025,gCO2/kWh,owid-energy
 FRA,France,Europe,co2pc,4,2024,t/yr,owid-co2
 FRA,France,Europe,energy,8552,2025,kWh/yr,owid-energy
 FRA,France,Europe,forest,32.5,2023,% land,wb-forest
-FRA,France,Europe,pm25,9.6,2020,µg/m³,wb-pm25
+FRA,France,Europe,pm25,8.2,2023,µg/m³,wb-pm25
 FRA,France,Europe,climate,28,NA,/100,esgmap-curated
 FRA,France,Europe,ev,27,NA,%,esgmap-curated
 FRA,France,Europe,score,68,NA,/100,derived
@@ -277,7 +277,7 @@ GEO,Georgia,Eurasia,carbon,146,2025,gCO2/kWh,owid-energy
 GEO,Georgia,Eurasia,co2pc,3.1,2024,t/yr,owid-co2
 GEO,Georgia,Eurasia,energy,3546,2025,kWh/yr,owid-energy
 GEO,Georgia,Eurasia,forest,40.6,2023,% land,wb-forest
-GEO,Georgia,Eurasia,pm25,17,2020,µg/m³,wb-pm25
+GEO,Georgia,Eurasia,pm25,18.6,2023,µg/m³,wb-pm25
 GEO,Georgia,Eurasia,climate,40,NA,/100,esgmap-curated
 GEO,Georgia,Eurasia,ev,NA,NA,%,esgmap-curated
 GEO,Georgia,Eurasia,score,80,NA,/100,derived
@@ -287,7 +287,7 @@ DEU,Germany,Europe,carbon,330,2025,gCO2/kWh,owid-energy
 DEU,Germany,Europe,co2pc,6.8,2024,t/yr,owid-co2
 DEU,Germany,Europe,energy,5953,2025,kWh/yr,owid-energy
 DEU,Germany,Europe,forest,32.7,2023,% land,wb-forest
-DEU,Germany,Europe,pm25,10.3,2020,µg/m³,wb-pm25
+DEU,Germany,Europe,pm25,8.8,2023,µg/m³,wb-pm25
 DEU,Germany,Europe,climate,27,NA,/100,esgmap-curated
 DEU,Germany,Europe,ev,25,NA,%,esgmap-curated
 DEU,Germany,Europe,score,67,NA,/100,derived
@@ -297,7 +297,7 @@ GHA,Ghana,Africa,carbon,469,2024,gCO2/kWh,owid-energy
 GHA,Ghana,Africa,co2pc,0.6,2024,t/yr,owid-co2
 GHA,Ghana,Africa,energy,705,2024,kWh/yr,owid-energy
 GHA,Ghana,Africa,forest,35.2,2023,% land,wb-forest
-GHA,Ghana,Africa,pm25,54.2,2020,µg/m³,wb-pm25
+GHA,Ghana,Africa,pm25,28.1,2023,µg/m³,wb-pm25
 GHA,Ghana,Africa,climate,55,NA,/100,esgmap-curated
 GHA,Ghana,Africa,ev,NA,NA,%,esgmap-curated
 GHA,Ghana,Africa,score,53,NA,/100,derived
@@ -307,7 +307,7 @@ GRC,Greece,Europe,carbon,315,2025,gCO2/kWh,owid-energy
 GRC,Greece,Europe,co2pc,5.3,2024,t/yr,owid-co2
 GRC,Greece,Europe,energy,5863,2025,kWh/yr,owid-energy
 GRC,Greece,Europe,forest,30.3,2023,% land,wb-forest
-GRC,Greece,Europe,pm25,14.4,2020,µg/m³,wb-pm25
+GRC,Greece,Europe,pm25,14.1,2023,µg/m³,wb-pm25
 GRC,Greece,Europe,climate,36,NA,/100,esgmap-curated
 GRC,Greece,Europe,ev,8,NA,%,esgmap-curated
 GRC,Greece,Europe,score,64,NA,/100,derived
@@ -317,7 +317,7 @@ GTM,Guatemala,Americas,carbon,301,2024,gCO2/kWh,owid-energy
 GTM,Guatemala,Americas,co2pc,1.1,2024,t/yr,owid-co2
 GTM,Guatemala,Americas,energy,858,2024,kWh/yr,owid-energy
 GTM,Guatemala,Americas,forest,32.6,2023,% land,wb-forest
-GTM,Guatemala,Americas,pm25,21.6,2020,µg/m³,wb-pm25
+GTM,Guatemala,Americas,pm25,29.7,2023,µg/m³,wb-pm25
 GTM,Guatemala,Americas,climate,60,NA,/100,esgmap-curated
 GTM,Guatemala,Americas,ev,NA,NA,%,esgmap-curated
 GTM,Guatemala,Americas,score,70,NA,/100,derived
@@ -327,7 +327,7 @@ HUN,Hungary,Europe,carbon,163,2025,gCO2/kWh,owid-energy
 HUN,Hungary,Europe,co2pc,4.1,2024,t/yr,owid-co2
 HUN,Hungary,Europe,energy,4178,2025,kWh/yr,owid-energy
 HUN,Hungary,Europe,forest,22.4,2023,% land,wb-forest
-HUN,Hungary,Europe,pm25,14.1,2020,µg/m³,wb-pm25
+HUN,Hungary,Europe,pm25,13.7,2023,µg/m³,wb-pm25
 HUN,Hungary,Europe,climate,33,NA,/100,esgmap-curated
 HUN,Hungary,Europe,ev,NA,NA,%,esgmap-curated
 HUN,Hungary,Europe,score,63,NA,/100,derived
@@ -337,7 +337,7 @@ ISL,Iceland,Europe,carbon,28,2024,gCO2/kWh,owid-energy
 ISL,Iceland,Europe,co2pc,9.7,2024,t/yr,owid-co2
 ISL,Iceland,Europe,energy,48424,2024,kWh/yr,owid-energy
 ISL,Iceland,Europe,forest,0.5,2023,% land,wb-forest
-ISL,Iceland,Europe,pm25,5.1,2020,µg/m³,wb-pm25
+ISL,Iceland,Europe,pm25,4.9,2023,µg/m³,wb-pm25
 ISL,Iceland,Europe,climate,20,NA,/100,esgmap-curated
 ISL,Iceland,Europe,ev,60,NA,%,esgmap-curated
 ISL,Iceland,Europe,score,88,NA,/100,derived
@@ -347,7 +347,7 @@ IND,India,Asia,carbon,670,2025,gCO2/kWh,owid-energy
 IND,India,Asia,co2pc,2.2,2024,t/yr,owid-co2
 IND,India,Asia,energy,1422,2025,kWh/yr,owid-energy
 IND,India,Asia,forest,24.5,2023,% land,wb-forest
-IND,India,Asia,pm25,48.4,2020,µg/m³,wb-pm25
+IND,India,Asia,pm25,54.1,2023,µg/m³,wb-pm25
 IND,India,Asia,climate,62,NA,/100,esgmap-curated
 IND,India,Asia,ev,2,NA,%,esgmap-curated
 IND,India,Asia,score,41,NA,/100,derived
@@ -357,7 +357,7 @@ IDN,Indonesia,Asia,carbon,680,2024,gCO2/kWh,owid-energy
 IDN,Indonesia,Asia,co2pc,2.9,2024,t/yr,owid-co2
 IDN,Indonesia,Asia,energy,1311,2024,kWh/yr,owid-energy
 IDN,Indonesia,Asia,forest,47.7,2023,% land,wb-forest
-IDN,Indonesia,Asia,pm25,17.9,2020,µg/m³,wb-pm25
+IDN,Indonesia,Asia,pm25,20.8,2023,µg/m³,wb-pm25
 IDN,Indonesia,Asia,climate,58,NA,/100,esgmap-curated
 IDN,Indonesia,Asia,ev,2,NA,%,esgmap-curated
 IDN,Indonesia,Asia,score,40,NA,/100,derived
@@ -367,7 +367,7 @@ IRN,Iran,Middle East,carbon,660,2025,gCO2/kWh,owid-energy
 IRN,Iran,Middle East,co2pc,8.7,2024,t/yr,owid-co2
 IRN,Iran,Middle East,energy,4283,2025,kWh/yr,owid-energy
 IRN,Iran,Middle East,forest,6.6,2023,% land,wb-forest
-IRN,Iran,Middle East,pm25,32.3,2020,µg/m³,wb-pm25
+IRN,Iran,Middle East,pm25,40.2,2023,µg/m³,wb-pm25
 IRN,Iran,Middle East,climate,55,NA,/100,esgmap-curated
 IRN,Iran,Middle East,ev,0.5,NA,%,esgmap-curated
 IRN,Iran,Middle East,score,26,NA,/100,derived
@@ -377,7 +377,7 @@ IRQ,Iraq,Middle East,carbon,683,2024,gCO2/kWh,owid-energy
 IRQ,Iraq,Middle East,co2pc,5.1,2024,t/yr,owid-co2
 IRQ,Iraq,Middle East,energy,3252,2024,kWh/yr,owid-energy
 IRQ,Iraq,Middle East,forest,1.9,2023,% land,wb-forest
-IRQ,Iraq,Middle East,pm25,38.2,2020,µg/m³,wb-pm25
+IRQ,Iraq,Middle East,pm25,49.5,2023,µg/m³,wb-pm25
 IRQ,Iraq,Middle East,climate,62,NA,/100,esgmap-curated
 IRQ,Iraq,Middle East,ev,NA,NA,%,esgmap-curated
 IRQ,Iraq,Middle East,score,28,NA,/100,derived
@@ -387,7 +387,7 @@ IRL,Ireland,Europe,carbon,257,2025,gCO2/kWh,owid-energy
 IRL,Ireland,Europe,co2pc,6.3,2024,t/yr,owid-co2
 IRL,Ireland,Europe,energy,5831,2025,kWh/yr,owid-energy
 IRL,Ireland,Europe,forest,11.5,2023,% land,wb-forest
-IRL,Ireland,Europe,pm25,8.2,2020,µg/m³,wb-pm25
+IRL,Ireland,Europe,pm25,7.5,2023,µg/m³,wb-pm25
 IRL,Ireland,Europe,climate,25,NA,/100,esgmap-curated
 IRL,Ireland,Europe,ev,24,NA,%,esgmap-curated
 IRL,Ireland,Europe,score,66,NA,/100,derived
@@ -397,7 +397,7 @@ ISR,Israel,Middle East,carbon,493,2025,gCO2/kWh,owid-energy
 ISR,Israel,Middle East,co2pc,5.6,2024,t/yr,owid-co2
 ISR,Israel,Middle East,energy,8627,2025,kWh/yr,owid-energy
 ISR,Israel,Middle East,forest,6.5,2023,% land,wb-forest
-ISR,Israel,Middle East,pm25,18.6,2020,µg/m³,wb-pm25
+ISR,Israel,Middle East,pm25,21.9,2023,µg/m³,wb-pm25
 ISR,Israel,Middle East,climate,35,NA,/100,esgmap-curated
 ISR,Israel,Middle East,ev,NA,NA,%,esgmap-curated
 ISR,Israel,Middle East,score,43,NA,/100,derived
@@ -407,7 +407,7 @@ ITA,Italy,Europe,carbon,285,2025,gCO2/kWh,owid-energy
 ITA,Italy,Europe,co2pc,5.1,2024,t/yr,owid-co2
 ITA,Italy,Europe,energy,4475,2025,kWh/yr,owid-energy
 ITA,Italy,Europe,forest,32.9,2023,% land,wb-forest
-ITA,Italy,Europe,pm25,14.7,2020,µg/m³,wb-pm25
+ITA,Italy,Europe,pm25,14.3,2023,µg/m³,wb-pm25
 ITA,Italy,Europe,climate,33,NA,/100,esgmap-curated
 ITA,Italy,Europe,ev,9,NA,%,esgmap-curated
 ITA,Italy,Europe,score,66,NA,/100,derived
@@ -417,7 +417,7 @@ JPN,Japan,Asia,carbon,477,2025,gCO2/kWh,owid-energy
 JPN,Japan,Asia,co2pc,7.8,2024,t/yr,owid-co2
 JPN,Japan,Asia,energy,8366,2025,kWh/yr,owid-energy
 JPN,Japan,Asia,forest,68.4,2023,% land,wb-forest
-JPN,Japan,Asia,pm25,12.8,2020,µg/m³,wb-pm25
+JPN,Japan,Asia,pm25,11.5,2023,µg/m³,wb-pm25
 JPN,Japan,Asia,climate,30,NA,/100,esgmap-curated
 JPN,Japan,Asia,ev,3,NA,%,esgmap-curated
 JPN,Japan,Asia,score,49,NA,/100,derived
@@ -427,7 +427,7 @@ JOR,Jordan,Middle East,carbon,530,2024,gCO2/kWh,owid-energy
 JOR,Jordan,Middle East,co2pc,2,2024,t/yr,owid-co2
 JOR,Jordan,Middle East,energy,2049,2024,kWh/yr,owid-energy
 JOR,Jordan,Middle East,forest,1.1,2023,% land,wb-forest
-JOR,Jordan,Middle East,pm25,28.8,2020,µg/m³,wb-pm25
+JOR,Jordan,Middle East,pm25,32.6,2023,µg/m³,wb-pm25
 JOR,Jordan,Middle East,climate,52,NA,/100,esgmap-curated
 JOR,Jordan,Middle East,ev,NA,NA,%,esgmap-curated
 JOR,Jordan,Middle East,score,46,NA,/100,derived
@@ -437,7 +437,7 @@ KAZ,Kazakhstan,Eurasia,carbon,805,2025,gCO2/kWh,owid-energy
 KAZ,Kazakhstan,Eurasia,co2pc,13.9,2024,t/yr,owid-co2
 KAZ,Kazakhstan,Eurasia,energy,5934,2025,kWh/yr,owid-energy
 KAZ,Kazakhstan,Eurasia,forest,1.3,2023,% land,wb-forest
-KAZ,Kazakhstan,Eurasia,pm25,20,2020,µg/m³,wb-pm25
+KAZ,Kazakhstan,Eurasia,pm25,19.6,2023,µg/m³,wb-pm25
 KAZ,Kazakhstan,Eurasia,climate,45,NA,/100,esgmap-curated
 KAZ,Kazakhstan,Eurasia,ev,1,NA,%,esgmap-curated
 KAZ,Kazakhstan,Eurasia,score,26,NA,/100,derived
@@ -447,7 +447,7 @@ KEN,Kenya,Africa,carbon,95,2025,gCO2/kWh,owid-energy
 KEN,Kenya,Africa,co2pc,0.4,2024,t/yr,owid-co2
 KEN,Kenya,Africa,energy,244,2025,kWh/yr,owid-energy
 KEN,Kenya,Africa,forest,6.2,2023,% land,wb-forest
-KEN,Kenya,Africa,pm25,24.4,2020,µg/m³,wb-pm25
+KEN,Kenya,Africa,pm25,20.3,2023,µg/m³,wb-pm25
 KEN,Kenya,Africa,climate,62,NA,/100,esgmap-curated
 KEN,Kenya,Africa,ev,1,NA,%,esgmap-curated
 KEN,Kenya,Africa,score,79,NA,/100,derived
@@ -457,7 +457,7 @@ KWT,Kuwait,Middle East,carbon,635,2025,gCO2/kWh,owid-energy
 KWT,Kuwait,Middle East,co2pc,26.2,2024,t/yr,owid-co2
 KWT,Kuwait,Middle East,energy,18402,2025,kWh/yr,owid-energy
 KWT,Kuwait,Middle East,forest,0.4,2023,% land,wb-forest
-KWT,Kuwait,Middle East,pm25,53.7,2020,µg/m³,wb-pm25
+KWT,Kuwait,Middle East,pm25,62.3,2023,µg/m³,wb-pm25
 KWT,Kuwait,Middle East,climate,45,NA,/100,esgmap-curated
 KWT,Kuwait,Middle East,ev,NA,NA,%,esgmap-curated
 KWT,Kuwait,Middle East,score,13,NA,/100,derived
@@ -467,7 +467,7 @@ LBY,Libya,Africa,carbon,827,2024,gCO2/kWh,owid-energy
 LBY,Libya,Africa,co2pc,8.8,2024,t/yr,owid-co2
 LBY,Libya,Africa,energy,4686,2024,kWh/yr,owid-energy
 LBY,Libya,Africa,forest,0.1,2023,% land,wb-forest
-LBY,Libya,Africa,pm25,33,2020,µg/m³,wb-pm25
+LBY,Libya,Africa,pm25,20,2023,µg/m³,wb-pm25
 LBY,Libya,Africa,climate,55,NA,/100,esgmap-curated
 LBY,Libya,Africa,ev,NA,NA,%,esgmap-curated
 LBY,Libya,Africa,score,21,NA,/100,derived
@@ -477,7 +477,7 @@ MYS,Malaysia,Asia,carbon,602,2025,gCO2/kWh,owid-energy
 MYS,Malaysia,Asia,co2pc,8.2,2024,t/yr,owid-co2
 MYS,Malaysia,Asia,energy,5589,2025,kWh/yr,owid-energy
 MYS,Malaysia,Asia,forest,57.7,2023,% land,wb-forest
-MYS,Malaysia,Asia,pm25,16.2,2020,µg/m³,wb-pm25
+MYS,Malaysia,Asia,pm25,15.9,2023,µg/m³,wb-pm25
 MYS,Malaysia,Asia,climate,45,NA,/100,esgmap-curated
 MYS,Malaysia,Asia,ev,NA,NA,%,esgmap-curated
 MYS,Malaysia,Asia,score,37,NA,/100,derived
@@ -487,7 +487,7 @@ MEX,Mexico,Americas,carbon,474,2025,gCO2/kWh,owid-energy
 MEX,Mexico,Americas,co2pc,3.5,2024,t/yr,owid-co2
 MEX,Mexico,Americas,energy,2705,2025,kWh/yr,owid-energy
 MEX,Mexico,Americas,forest,33.6,2023,% land,wb-forest
-MEX,Mexico,Americas,pm25,15,2020,µg/m³,wb-pm25
+MEX,Mexico,Americas,pm25,16.6,2023,µg/m³,wb-pm25
 MEX,Mexico,Americas,climate,45,NA,/100,esgmap-curated
 MEX,Mexico,Americas,ev,2,NA,%,esgmap-curated
 MEX,Mexico,Americas,score,45,NA,/100,derived
@@ -497,7 +497,7 @@ MNG,Mongolia,Asia,carbon,816,2025,gCO2/kWh,owid-energy
 MNG,Mongolia,Asia,co2pc,12.9,2024,t/yr,owid-co2
 MNG,Mongolia,Asia,energy,2755,2025,kWh/yr,owid-energy
 MNG,Mongolia,Asia,forest,9.1,2023,% land,wb-forest
-MNG,Mongolia,Asia,pm25,29.7,2020,µg/m³,wb-pm25
+MNG,Mongolia,Asia,pm25,42.7,2023,µg/m³,wb-pm25
 MNG,Mongolia,Asia,climate,58,NA,/100,esgmap-curated
 MNG,Mongolia,Asia,ev,NA,NA,%,esgmap-curated
 MNG,Mongolia,Asia,score,19,NA,/100,derived
@@ -507,7 +507,7 @@ MAR,Morocco,Africa,carbon,596,2025,gCO2/kWh,owid-energy
 MAR,Morocco,Africa,co2pc,1.8,2024,t/yr,owid-co2
 MAR,Morocco,Africa,energy,1158,2025,kWh/yr,owid-energy
 MAR,Morocco,Africa,forest,12.9,2023,% land,wb-forest
-MAR,Morocco,Africa,pm25,21.3,2020,µg/m³,wb-pm25
+MAR,Morocco,Africa,pm25,18.7,2023,µg/m³,wb-pm25
 MAR,Morocco,Africa,climate,52,NA,/100,esgmap-curated
 MAR,Morocco,Africa,ev,1,NA,%,esgmap-curated
 MAR,Morocco,Africa,score,42,NA,/100,derived
@@ -517,7 +517,7 @@ MOZ,Mozambique,Africa,carbon,129,2024,gCO2/kWh,owid-energy
 MOZ,Mozambique,Africa,co2pc,0.2,2024,t/yr,owid-co2
 MOZ,Mozambique,Africa,energy,571,2024,kWh/yr,owid-energy
 MOZ,Mozambique,Africa,forest,45.8,2023,% land,wb-forest
-MOZ,Mozambique,Africa,pm25,20.1,2020,µg/m³,wb-pm25
+MOZ,Mozambique,Africa,pm25,13.7,2023,µg/m³,wb-pm25
 MOZ,Mozambique,Africa,climate,72,NA,/100,esgmap-curated
 MOZ,Mozambique,Africa,ev,NA,NA,%,esgmap-curated
 MOZ,Mozambique,Africa,score,81,NA,/100,derived
@@ -527,7 +527,7 @@ MMR,Myanmar,Asia,carbon,503,2024,gCO2/kWh,owid-energy
 MMR,Myanmar,Asia,co2pc,0.6,2024,t/yr,owid-co2
 MMR,Myanmar,Asia,energy,398,2024,kWh/yr,owid-energy
 MMR,Myanmar,Asia,forest,42.4,2023,% land,wb-forest
-MMR,Myanmar,Asia,pm25,32.3,2020,µg/m³,wb-pm25
+MMR,Myanmar,Asia,pm25,35.1,2023,µg/m³,wb-pm25
 MMR,Myanmar,Asia,climate,68,NA,/100,esgmap-curated
 MMR,Myanmar,Asia,ev,NA,NA,%,esgmap-curated
 MMR,Myanmar,Asia,score,55,NA,/100,derived
@@ -537,7 +537,7 @@ NPL,Nepal,Asia,carbon,24,2024,gCO2/kWh,owid-energy
 NPL,Nepal,Asia,co2pc,0.6,2024,t/yr,owid-co2
 NPL,Nepal,Asia,energy,375,2024,kWh/yr,owid-energy
 NPL,Nepal,Asia,forest,41.6,2023,% land,wb-forest
-NPL,Nepal,Asia,pm25,45.7,2020,µg/m³,wb-pm25
+NPL,Nepal,Asia,pm25,53.2,2023,µg/m³,wb-pm25
 NPL,Nepal,Asia,climate,64,NA,/100,esgmap-curated
 NPL,Nepal,Asia,ev,NA,NA,%,esgmap-curated
 NPL,Nepal,Asia,score,91,NA,/100,derived
@@ -547,7 +547,7 @@ NLD,Netherlands,Europe,carbon,254,2025,gCO2/kWh,owid-energy
 NLD,Netherlands,Europe,co2pc,6.3,2024,t/yr,owid-co2
 NLD,Netherlands,Europe,energy,7356,2025,kWh/yr,owid-energy
 NLD,Netherlands,Europe,forest,11.1,2023,% land,wb-forest
-NLD,Netherlands,Europe,pm25,10.9,2020,µg/m³,wb-pm25
+NLD,Netherlands,Europe,pm25,8.6,2023,µg/m³,wb-pm25
 NLD,Netherlands,Europe,climate,30,NA,/100,esgmap-curated
 NLD,Netherlands,Europe,ev,35,NA,%,esgmap-curated
 NLD,Netherlands,Europe,score,67,NA,/100,derived
@@ -557,7 +557,7 @@ NZL,New Zealand,Oceania,carbon,93,2025,gCO2/kWh,owid-energy
 NZL,New Zealand,Oceania,co2pc,6.2,2024,t/yr,owid-co2
 NZL,New Zealand,Oceania,energy,8252,2025,kWh/yr,owid-energy
 NZL,New Zealand,Oceania,forest,37.8,2023,% land,wb-forest
-NZL,New Zealand,Oceania,pm25,6.5,2020,µg/m³,wb-pm25
+NZL,New Zealand,Oceania,pm25,6.9,2023,µg/m³,wb-pm25
 NZL,New Zealand,Oceania,climate,28,NA,/100,esgmap-curated
 NZL,New Zealand,Oceania,ev,16,NA,%,esgmap-curated
 NZL,New Zealand,Oceania,score,84,NA,/100,derived
@@ -567,7 +567,7 @@ NGA,Nigeria,Africa,carbon,456,2025,gCO2/kWh,owid-energy
 NGA,Nigeria,Africa,co2pc,0.6,2024,t/yr,owid-co2
 NGA,Nigeria,Africa,energy,175,2025,kWh/yr,owid-energy
 NGA,Nigeria,Africa,forest,23.2,2023,% land,wb-forest
-NGA,Nigeria,Africa,pm25,56.5,2020,µg/m³,wb-pm25
+NGA,Nigeria,Africa,pm25,65.7,2023,µg/m³,wb-pm25
 NGA,Nigeria,Africa,climate,65,NA,/100,esgmap-curated
 NGA,Nigeria,Africa,ev,0.2,NA,%,esgmap-curated
 NGA,Nigeria,Africa,score,54,NA,/100,derived
@@ -577,7 +577,7 @@ NOR,Norway,Europe,carbon,28,2025,gCO2/kWh,owid-energy
 NOR,Norway,Europe,co2pc,6.7,2024,t/yr,owid-co2
 NOR,Norway,Europe,energy,28598,2025,kWh/yr,owid-energy
 NOR,Norway,Europe,forest,33.5,2023,% land,wb-forest
-NOR,Norway,Europe,pm25,6.1,2020,µg/m³,wb-pm25
+NOR,Norway,Europe,pm25,5.5,2023,µg/m³,wb-pm25
 NOR,Norway,Europe,climate,18,NA,/100,esgmap-curated
 NOR,Norway,Europe,ev,88,NA,%,esgmap-curated
 NOR,Norway,Europe,score,91,NA,/100,derived
@@ -587,7 +587,7 @@ OMN,Oman,Middle East,carbon,544,2025,gCO2/kWh,owid-energy
 OMN,Oman,Middle East,co2pc,15.7,2024,t/yr,owid-co2
 OMN,Oman,Middle East,energy,9617,2025,kWh/yr,owid-energy
 OMN,Oman,Middle East,forest,0,2023,% land,wb-forest
-OMN,Oman,Middle East,pm25,39.6,2020,µg/m³,wb-pm25
+OMN,Oman,Middle East,pm25,46.9,2023,µg/m³,wb-pm25
 OMN,Oman,Middle East,climate,48,NA,/100,esgmap-curated
 OMN,Oman,Middle East,ev,NA,NA,%,esgmap-curated
 OMN,Oman,Middle East,score,26,NA,/100,derived
@@ -597,7 +597,7 @@ PAK,Pakistan,Asia,carbon,347,2025,gCO2/kWh,owid-energy
 PAK,Pakistan,Asia,co2pc,0.7,2024,t/yr,owid-co2
 PAK,Pakistan,Asia,energy,764,2025,kWh/yr,owid-energy
 PAK,Pakistan,Asia,forest,4.7,2023,% land,wb-forest
-PAK,Pakistan,Asia,pm25,43,2020,µg/m³,wb-pm25
+PAK,Pakistan,Asia,pm25,58.4,2023,µg/m³,wb-pm25
 PAK,Pakistan,Asia,climate,70,NA,/100,esgmap-curated
 PAK,Pakistan,Asia,ev,1,NA,%,esgmap-curated
 PAK,Pakistan,Asia,score,55,NA,/100,derived
@@ -607,7 +607,7 @@ PRY,Paraguay,Americas,carbon,25,2025,gCO2/kWh,owid-energy
 PRY,Paraguay,Americas,co2pc,1.1,2024,t/yr,owid-co2
 PRY,Paraguay,Americas,energy,6466,2025,kWh/yr,owid-energy
 PRY,Paraguay,Americas,forest,38.5,2023,% land,wb-forest
-PRY,Paraguay,Americas,pm25,10.1,2020,µg/m³,wb-pm25
+PRY,Paraguay,Americas,pm25,15.3,2023,µg/m³,wb-pm25
 PRY,Paraguay,Americas,climate,48,NA,/100,esgmap-curated
 PRY,Paraguay,Americas,ev,NA,NA,%,esgmap-curated
 PRY,Paraguay,Americas,score,92,NA,/100,derived
@@ -617,7 +617,7 @@ PER,Peru,Americas,carbon,238,2025,gCO2/kWh,owid-energy
 PER,Peru,Americas,co2pc,2.1,2024,t/yr,owid-co2
 PER,Peru,Americas,energy,1748,2025,kWh/yr,owid-energy
 PER,Peru,Americas,forest,56.1,2023,% land,wb-forest
-PER,Peru,Americas,pm25,27,2020,µg/m³,wb-pm25
+PER,Peru,Americas,pm25,31.1,2023,µg/m³,wb-pm25
 PER,Peru,Americas,climate,50,NA,/100,esgmap-curated
 PER,Peru,Americas,ev,1,NA,%,esgmap-curated
 PER,Peru,Americas,score,68,NA,/100,derived
@@ -627,7 +627,7 @@ PHL,Philippines,Asia,carbon,588,2025,gCO2/kWh,owid-energy
 PHL,Philippines,Asia,co2pc,1.5,2024,t/yr,owid-co2
 PHL,Philippines,Asia,energy,1054,2025,kWh/yr,owid-energy
 PHL,Philippines,Asia,forest,24.5,2023,% land,wb-forest
-PHL,Philippines,Asia,pm25,20.3,2020,µg/m³,wb-pm25
+PHL,Philippines,Asia,pm25,22.2,2023,µg/m³,wb-pm25
 PHL,Philippines,Asia,climate,60,NA,/100,esgmap-curated
 PHL,Philippines,Asia,ev,NA,NA,%,esgmap-curated
 PHL,Philippines,Asia,score,43,NA,/100,derived
@@ -637,7 +637,7 @@ POL,Poland,Europe,carbon,589,2025,gCO2/kWh,owid-energy
 POL,Poland,Europe,co2pc,7.1,2024,t/yr,owid-co2
 POL,Poland,Europe,energy,4543,2025,kWh/yr,owid-energy
 POL,Poland,Europe,forest,31.1,2023,% land,wb-forest
-POL,Poland,Europe,pm25,18,2020,µg/m³,wb-pm25
+POL,Poland,Europe,pm25,16.5,2023,µg/m³,wb-pm25
 POL,Poland,Europe,climate,32,NA,/100,esgmap-curated
 POL,Poland,Europe,ev,6,NA,%,esgmap-curated
 POL,Poland,Europe,score,49,NA,/100,derived
@@ -647,7 +647,7 @@ PRT,Portugal,Europe,carbon,128,2025,gCO2/kWh,owid-energy
 PRT,Portugal,Europe,co2pc,3.4,2024,t/yr,owid-co2
 PRT,Portugal,Europe,energy,4911,2025,kWh/yr,owid-energy
 PRT,Portugal,Europe,forest,36.2,2023,% land,wb-forest
-PRT,Portugal,Europe,pm25,8.5,2020,µg/m³,wb-pm25
+PRT,Portugal,Europe,pm25,8.8,2023,µg/m³,wb-pm25
 PRT,Portugal,Europe,climate,33,NA,/100,esgmap-curated
 PRT,Portugal,Europe,ev,20,NA,%,esgmap-curated
 PRT,Portugal,Europe,score,82,NA,/100,derived
@@ -657,7 +657,7 @@ QAT,Qatar,Middle East,carbon,582,2025,gCO2/kWh,owid-energy
 QAT,Qatar,Middle East,co2pc,41.3,2024,t/yr,owid-co2
 QAT,Qatar,Middle East,energy,18030,2025,kWh/yr,owid-energy
 QAT,Qatar,Middle East,forest,0,2023,% land,wb-forest
-QAT,Qatar,Middle East,pm25,75.7,2020,µg/m³,wb-pm25
+QAT,Qatar,Middle East,pm25,107.8,2023,µg/m³,wb-pm25
 QAT,Qatar,Middle East,climate,42,NA,/100,esgmap-curated
 QAT,Qatar,Middle East,ev,NA,NA,%,esgmap-curated
 QAT,Qatar,Middle East,score,16,NA,/100,derived
@@ -667,7 +667,7 @@ ROU,Romania,Europe,carbon,251,2025,gCO2/kWh,owid-energy
 ROU,Romania,Europe,co2pc,3.6,2024,t/yr,owid-co2
 ROU,Romania,Europe,energy,2634,2025,kWh/yr,owid-energy
 ROU,Romania,Europe,forest,30.1,2023,% land,wb-forest
-ROU,Romania,Europe,pm25,14.9,2020,µg/m³,wb-pm25
+ROU,Romania,Europe,pm25,16,2023,µg/m³,wb-pm25
 ROU,Romania,Europe,climate,36,NA,/100,esgmap-curated
 ROU,Romania,Europe,ev,6,NA,%,esgmap-curated
 ROU,Romania,Europe,score,67,NA,/100,derived
@@ -677,7 +677,7 @@ RUS,Russia,Eurasia,carbon,450,2025,gCO2/kWh,owid-energy
 RUS,Russia,Eurasia,co2pc,12.3,2024,t/yr,owid-co2
 RUS,Russia,Eurasia,energy,8283,2025,kWh/yr,owid-energy
 RUS,Russia,Eurasia,forest,49.8,2023,% land,wb-forest
-RUS,Russia,Eurasia,pm25,11.3,2020,µg/m³,wb-pm25
+RUS,Russia,Eurasia,pm25,11.6,2023,µg/m³,wb-pm25
 RUS,Russia,Eurasia,climate,38,NA,/100,esgmap-curated
 RUS,Russia,Eurasia,ev,1,NA,%,esgmap-curated
 RUS,Russia,Eurasia,score,39,NA,/100,derived
@@ -687,7 +687,7 @@ SAU,Saudi Arabia,Middle East,carbon,692,2024,gCO2/kWh,owid-energy
 SAU,Saudi Arabia,Middle East,co2pc,20.4,2024,t/yr,owid-co2
 SAU,Saudi Arabia,Middle East,energy,13386,2024,kWh/yr,owid-energy
 SAU,Saudi Arabia,Middle East,forest,0.5,2023,% land,wb-forest
-SAU,Saudi Arabia,Middle East,pm25,53.1,2020,µg/m³,wb-pm25
+SAU,Saudi Arabia,Middle East,pm25,73.5,2023,µg/m³,wb-pm25
 SAU,Saudi Arabia,Middle East,climate,50,NA,/100,esgmap-curated
 SAU,Saudi Arabia,Middle East,ev,1,NA,%,esgmap-curated
 SAU,Saudi Arabia,Middle East,score,20,NA,/100,derived
@@ -697,7 +697,7 @@ SRB,Serbia,Europe,carbon,696,2025,gCO2/kWh,owid-energy
 SRB,Serbia,Europe,co2pc,6.2,2024,t/yr,owid-co2
 SRB,Serbia,Europe,energy,5475,2025,kWh/yr,owid-energy
 SRB,Serbia,Europe,forest,32.4,2023,% land,wb-forest
-SRB,Serbia,Europe,pm25,22.5,2020,µg/m³,wb-pm25
+SRB,Serbia,Europe,pm25,19.3,2023,µg/m³,wb-pm25
 SRB,Serbia,Europe,climate,38,NA,/100,esgmap-curated
 SRB,Serbia,Europe,ev,NA,NA,%,esgmap-curated
 SRB,Serbia,Europe,score,39,NA,/100,derived
@@ -707,7 +707,7 @@ SVK,Slovakia,Europe,carbon,95,2025,gCO2/kWh,owid-energy
 SVK,Slovakia,Europe,co2pc,5.3,2024,t/yr,owid-co2
 SVK,Slovakia,Europe,energy,5315,2025,kWh/yr,owid-energy
 SVK,Slovakia,Europe,forest,40.1,2023,% land,wb-forest
-SVK,Slovakia,Europe,pm25,15.4,2020,µg/m³,wb-pm25
+SVK,Slovakia,Europe,pm25,13.7,2023,µg/m³,wb-pm25
 SVK,Slovakia,Europe,climate,30,NA,/100,esgmap-curated
 SVK,Slovakia,Europe,ev,NA,NA,%,esgmap-curated
 SVK,Slovakia,Europe,score,59,NA,/100,derived
@@ -717,7 +717,7 @@ ZAF,South Africa,Africa,carbon,699,2025,gCO2/kWh,owid-energy
 ZAF,South Africa,Africa,co2pc,6.9,2024,t/yr,owid-co2
 ZAF,South Africa,Africa,energy,3749,2025,kWh/yr,owid-energy
 ZAF,South Africa,Africa,forest,14,2023,% land,wb-forest
-ZAF,South Africa,Africa,pm25,23.8,2020,µg/m³,wb-pm25
+ZAF,South Africa,Africa,pm25,27.7,2023,µg/m³,wb-pm25
 ZAF,South Africa,Africa,climate,50,NA,/100,esgmap-curated
 ZAF,South Africa,Africa,ev,1,NA,%,esgmap-curated
 ZAF,South Africa,Africa,score,36,NA,/100,derived
@@ -727,7 +727,7 @@ KOR,South Korea,Asia,carbon,417,2025,gCO2/kWh,owid-energy
 KOR,South Korea,Asia,co2pc,11.3,2024,t/yr,owid-co2
 KOR,South Korea,Asia,energy,12090,2025,kWh/yr,owid-energy
 KOR,South Korea,Asia,forest,64.1,2023,% land,wb-forest
-KOR,South Korea,Asia,pm25,25.9,2020,µg/m³,wb-pm25
+KOR,South Korea,Asia,pm25,21.9,2023,µg/m³,wb-pm25
 KOR,South Korea,Asia,climate,30,NA,/100,esgmap-curated
 KOR,South Korea,Asia,ev,10,NA,%,esgmap-curated
 KOR,South Korea,Asia,score,44,NA,/100,derived
@@ -737,7 +737,7 @@ ESP,Spain,Europe,carbon,154,2025,gCO2/kWh,owid-energy
 ESP,Spain,Europe,co2pc,4.6,2024,t/yr,owid-co2
 ESP,Spain,Europe,energy,6011,2025,kWh/yr,owid-energy
 ESP,Spain,Europe,forest,37.2,2023,% land,wb-forest
-ESP,Spain,Europe,pm25,9.6,2020,µg/m³,wb-pm25
+ESP,Spain,Europe,pm25,10.1,2023,µg/m³,wb-pm25
 ESP,Spain,Europe,climate,34,NA,/100,esgmap-curated
 ESP,Spain,Europe,ev,12,NA,%,esgmap-curated
 ESP,Spain,Europe,score,72,NA,/100,derived
@@ -747,7 +747,7 @@ LKA,Sri Lanka,Asia,carbon,329,2025,gCO2/kWh,owid-energy
 LKA,Sri Lanka,Asia,co2pc,0.9,2024,t/yr,owid-co2
 LKA,Sri Lanka,Asia,energy,743,2025,kWh/yr,owid-energy
 LKA,Sri Lanka,Asia,forest,34,2023,% land,wb-forest
-LKA,Sri Lanka,Asia,pm25,20,2020,µg/m³,wb-pm25
+LKA,Sri Lanka,Asia,pm25,22.7,2023,µg/m³,wb-pm25
 LKA,Sri Lanka,Asia,climate,55,NA,/100,esgmap-curated
 LKA,Sri Lanka,Asia,ev,NA,NA,%,esgmap-curated
 LKA,Sri Lanka,Asia,score,67,NA,/100,derived
@@ -757,7 +757,7 @@ SDN,Sudan,Africa,carbon,154,2024,gCO2/kWh,owid-energy
 SDN,Sudan,Africa,co2pc,0.4,2024,t/yr,owid-co2
 SDN,Sudan,Africa,energy,293,2024,kWh/yr,owid-energy
 SDN,Sudan,Africa,forest,9.6,2023,% land,wb-forest
-SDN,Sudan,Africa,pm25,45.8,2020,µg/m³,wb-pm25
+SDN,Sudan,Africa,pm25,37.6,2023,µg/m³,wb-pm25
 SDN,Sudan,Africa,climate,72,NA,/100,esgmap-curated
 SDN,Sudan,Africa,ev,NA,NA,%,esgmap-curated
 SDN,Sudan,Africa,score,78,NA,/100,derived
@@ -767,7 +767,7 @@ SWE,Sweden,Europe,carbon,35,2025,gCO2/kWh,owid-energy
 SWE,Sweden,Europe,co2pc,3.6,2024,t/yr,owid-co2
 SWE,Sweden,Europe,energy,16019,2025,kWh/yr,owid-energy
 SWE,Sweden,Europe,forest,68.7,2023,% land,wb-forest
-SWE,Sweden,Europe,pm25,5.6,2020,µg/m³,wb-pm25
+SWE,Sweden,Europe,pm25,5.3,2023,µg/m³,wb-pm25
 SWE,Sweden,Europe,climate,19,NA,/100,esgmap-curated
 SWE,Sweden,Europe,ev,55,NA,%,esgmap-curated
 SWE,Sweden,Europe,score,83,NA,/100,derived
@@ -777,7 +777,7 @@ CHE,Switzerland,Europe,carbon,39,2025,gCO2/kWh,owid-energy
 CHE,Switzerland,Europe,co2pc,3.6,2024,t/yr,owid-co2
 CHE,Switzerland,Europe,energy,7251,2025,kWh/yr,owid-energy
 CHE,Switzerland,Europe,forest,32.4,2023,% land,wb-forest
-CHE,Switzerland,Europe,pm25,9.1,2020,µg/m³,wb-pm25
+CHE,Switzerland,Europe,pm25,8.3,2023,µg/m³,wb-pm25
 CHE,Switzerland,Europe,climate,24,NA,/100,esgmap-curated
 CHE,Switzerland,Europe,ev,30,NA,%,esgmap-curated
 CHE,Switzerland,Europe,score,80,NA,/100,derived
@@ -787,7 +787,7 @@ SYR,Syria,Middle East,carbon,706,2024,gCO2/kWh,owid-energy
 SYR,Syria,Middle East,co2pc,1.3,2024,t/yr,owid-co2
 SYR,Syria,Middle East,energy,1008,2024,kWh/yr,owid-energy
 SYR,Syria,Middle East,forest,2.8,2023,% land,wb-forest
-SYR,Syria,Middle East,pm25,24.7,2020,µg/m³,wb-pm25
+SYR,Syria,Middle East,pm25,32.1,2023,µg/m³,wb-pm25
 SYR,Syria,Middle East,climate,60,NA,/100,esgmap-curated
 SYR,Syria,Middle East,ev,NA,NA,%,esgmap-curated
 SYR,Syria,Middle East,score,32,NA,/100,derived
@@ -797,7 +797,7 @@ TZA,Tanzania,Africa,carbon,345,2024,gCO2/kWh,owid-energy
 TZA,Tanzania,Africa,co2pc,0.3,2024,t/yr,owid-co2
 TZA,Tanzania,Africa,energy,129,2024,kWh/yr,owid-energy
 TZA,Tanzania,Africa,forest,50.1,2023,% land,wb-forest
-TZA,Tanzania,Africa,pm25,25.1,2020,µg/m³,wb-pm25
+TZA,Tanzania,Africa,pm25,20.2,2023,µg/m³,wb-pm25
 TZA,Tanzania,Africa,climate,64,NA,/100,esgmap-curated
 TZA,Tanzania,Africa,ev,NA,NA,%,esgmap-curated
 TZA,Tanzania,Africa,score,56,NA,/100,derived
@@ -807,7 +807,7 @@ THA,Thailand,Asia,carbon,546,2025,gCO2/kWh,owid-energy
 THA,Thailand,Asia,co2pc,3.7,2024,t/yr,owid-co2
 THA,Thailand,Asia,energy,2628,2025,kWh/yr,owid-energy
 THA,Thailand,Asia,forest,38.7,2023,% land,wb-forest
-THA,Thailand,Asia,pm25,31,2020,µg/m³,wb-pm25
+THA,Thailand,Asia,pm25,23.5,2023,µg/m³,wb-pm25
 THA,Thailand,Asia,climate,52,NA,/100,esgmap-curated
 THA,Thailand,Asia,ev,12,NA,%,esgmap-curated
 THA,Thailand,Asia,score,43,NA,/100,derived
@@ -817,7 +817,7 @@ TUN,Tunisia,Africa,carbon,560,2025,gCO2/kWh,owid-energy
 TUN,Tunisia,Africa,co2pc,2.7,2024,t/yr,owid-co2
 TUN,Tunisia,Africa,energy,1807,2025,kWh/yr,owid-energy
 TUN,Tunisia,Africa,forest,4.6,2023,% land,wb-forest
-TUN,Tunisia,Africa,pm25,24.2,2020,µg/m³,wb-pm25
+TUN,Tunisia,Africa,pm25,18.9,2023,µg/m³,wb-pm25
 TUN,Tunisia,Africa,climate,48,NA,/100,esgmap-curated
 TUN,Tunisia,Africa,ev,NA,NA,%,esgmap-curated
 TUN,Tunisia,Africa,score,37,NA,/100,derived
@@ -827,7 +827,7 @@ TUR,Turkey,Eurasia,carbon,475,2025,gCO2/kWh,owid-energy
 TUR,Turkey,Eurasia,co2pc,5.9,2024,t/yr,owid-co2
 TUR,Turkey,Eurasia,energy,4036,2025,kWh/yr,owid-energy
 TUR,Turkey,Eurasia,forest,29.5,2023,% land,wb-forest
-TUR,Turkey,Eurasia,pm25,21.6,2020,µg/m³,wb-pm25
+TUR,Turkey,Eurasia,pm25,26.4,2023,µg/m³,wb-pm25
 TUR,Turkey,Eurasia,climate,40,NA,/100,esgmap-curated
 TUR,Turkey,Eurasia,ev,8,NA,%,esgmap-curated
 TUR,Turkey,Eurasia,score,54,NA,/100,derived
@@ -837,7 +837,7 @@ TKM,Turkmenistan,Eurasia,carbon,1306,2024,gCO2/kWh,owid-energy
 TKM,Turkmenistan,Eurasia,co2pc,10.8,2024,t/yr,owid-co2
 TKM,Turkmenistan,Eurasia,energy,4405,2024,kWh/yr,owid-energy
 TKM,Turkmenistan,Eurasia,forest,8.8,2023,% land,wb-forest
-TKM,Turkmenistan,Eurasia,pm25,19.6,2020,µg/m³,wb-pm25
+TKM,Turkmenistan,Eurasia,pm25,31.2,2023,µg/m³,wb-pm25
 TKM,Turkmenistan,Eurasia,climate,52,NA,/100,esgmap-curated
 TKM,Turkmenistan,Eurasia,ev,NA,NA,%,esgmap-curated
 TKM,Turkmenistan,Eurasia,score,19,NA,/100,derived
@@ -847,7 +847,7 @@ UKR,Ukraine,Europe,carbon,250,2022,gCO2/kWh,owid-energy
 UKR,Ukraine,Europe,co2pc,3.8,2024,t/yr,owid-co2
 UKR,Ukraine,Europe,energy,2717,2022,kWh/yr,owid-energy
 UKR,Ukraine,Europe,forest,16.8,2023,% land,wb-forest
-UKR,Ukraine,Europe,pm25,14.9,2020,µg/m³,wb-pm25
+UKR,Ukraine,Europe,pm25,14.9,2023,µg/m³,wb-pm25
 UKR,Ukraine,Europe,climate,40,NA,/100,esgmap-curated
 UKR,Ukraine,Europe,ev,3,NA,%,esgmap-curated
 UKR,Ukraine,Europe,score,54,NA,/100,derived
@@ -857,7 +857,7 @@ ARE,United Arab Emirates,Middle East,carbon,468,2024,gCO2/kWh,owid-energy
 ARE,United Arab Emirates,Middle East,co2pc,20.1,2024,t/yr,owid-co2
 ARE,United Arab Emirates,Middle East,energy,16075,2024,kWh/yr,owid-energy
 ARE,United Arab Emirates,Middle East,forest,4.5,2023,% land,wb-forest
-ARE,United Arab Emirates,Middle East,pm25,36.3,2020,µg/m³,wb-pm25
+ARE,United Arab Emirates,Middle East,pm25,57.2,2023,µg/m³,wb-pm25
 ARE,United Arab Emirates,Middle East,climate,45,NA,/100,esgmap-curated
 ARE,United Arab Emirates,Middle East,ev,13,NA,%,esgmap-curated
 ARE,United Arab Emirates,Middle East,score,33,NA,/100,derived
@@ -867,7 +867,7 @@ GBR,United Kingdom,Europe,carbon,217,2025,gCO2/kWh,owid-energy
 GBR,United Kingdom,Europe,co2pc,4.5,2024,t/yr,owid-co2
 GBR,United Kingdom,Europe,energy,4203,2025,kWh/yr,owid-energy
 GBR,United Kingdom,Europe,forest,13.3,2023,% land,wb-forest
-GBR,United Kingdom,Europe,pm25,9.9,2020,µg/m³,wb-pm25
+GBR,United Kingdom,Europe,pm25,9.5,2023,µg/m³,wb-pm25
 GBR,United Kingdom,Europe,climate,26,NA,/100,esgmap-curated
 GBR,United Kingdom,Europe,ev,24,NA,%,esgmap-curated
 GBR,United Kingdom,Europe,score,70,NA,/100,derived
@@ -877,7 +877,7 @@ USA,United States,Americas,carbon,384,2025,gCO2/kWh,owid-energy
 USA,United States,Americas,co2pc,14.2,2024,t/yr,owid-co2
 USA,United States,Americas,energy,13015,2025,kWh/yr,owid-energy
 USA,United States,Americas,forest,33.9,2023,% land,wb-forest
-USA,United States,Americas,pm25,7.8,2020,µg/m³,wb-pm25
+USA,United States,Americas,pm25,7,2023,µg/m³,wb-pm25
 USA,United States,Americas,climate,30,NA,/100,esgmap-curated
 USA,United States,Americas,ev,10,NA,%,esgmap-curated
 USA,United States,Americas,score,46,NA,/100,derived
@@ -887,7 +887,7 @@ URY,Uruguay,Americas,carbon,80,2025,gCO2/kWh,owid-energy
 URY,Uruguay,Americas,co2pc,2.4,2024,t/yr,owid-co2
 URY,Uruguay,Americas,energy,3528,2025,kWh/yr,owid-energy
 URY,Uruguay,Americas,forest,12,2023,% land,wb-forest
-URY,Uruguay,Americas,pm25,10.6,2020,µg/m³,wb-pm25
+URY,Uruguay,Americas,pm25,10.9,2023,µg/m³,wb-pm25
 URY,Uruguay,Americas,climate,34,NA,/100,esgmap-curated
 URY,Uruguay,Americas,ev,NA,NA,%,esgmap-curated
 URY,Uruguay,Americas,score,90,NA,/100,derived
@@ -897,7 +897,7 @@ UZB,Uzbekistan,Eurasia,carbon,1000,2025,gCO2/kWh,owid-energy
 UZB,Uzbekistan,Eurasia,co2pc,3.8,2024,t/yr,owid-co2
 UZB,Uzbekistan,Eurasia,energy,2340,2025,kWh/yr,owid-energy
 UZB,Uzbekistan,Eurasia,forest,8.5,2023,% land,wb-forest
-UZB,Uzbekistan,Eurasia,pm25,32,2020,µg/m³,wb-pm25
+UZB,Uzbekistan,Eurasia,pm25,32.8,2023,µg/m³,wb-pm25
 UZB,Uzbekistan,Eurasia,climate,50,NA,/100,esgmap-curated
 UZB,Uzbekistan,Eurasia,ev,NA,NA,%,esgmap-curated
 UZB,Uzbekistan,Eurasia,score,33,NA,/100,derived
@@ -907,7 +907,7 @@ VEN,Venezuela,Americas,carbon,86,2024,gCO2/kWh,owid-energy
 VEN,Venezuela,Americas,co2pc,4.1,2024,t/yr,owid-co2
 VEN,Venezuela,Americas,energy,2821,2024,kWh/yr,owid-energy
 VEN,Venezuela,Americas,forest,52.2,2023,% land,wb-forest
-VEN,Venezuela,Americas,pm25,15.3,2020,µg/m³,wb-pm25
+VEN,Venezuela,Americas,pm25,19.2,2023,µg/m³,wb-pm25
 VEN,Venezuela,Americas,climate,55,NA,/100,esgmap-curated
 VEN,Venezuela,Americas,ev,NA,NA,%,esgmap-curated
 VEN,Venezuela,Americas,score,83,NA,/100,derived
@@ -917,7 +917,7 @@ VNM,Vietnam,Asia,carbon,461,2025,gCO2/kWh,owid-energy
 VNM,Vietnam,Asia,co2pc,3.7,2024,t/yr,owid-co2
 VNM,Vietnam,Asia,energy,3051,2025,kWh/yr,owid-energy
 VNM,Vietnam,Asia,forest,47.4,2023,% land,wb-forest
-VNM,Vietnam,Asia,pm25,20.8,2020,µg/m³,wb-pm25
+VNM,Vietnam,Asia,pm25,24.8,2023,µg/m³,wb-pm25
 VNM,Vietnam,Asia,climate,60,NA,/100,esgmap-curated
 VNM,Vietnam,Asia,ev,4,NA,%,esgmap-curated
 VNM,Vietnam,Asia,score,53,NA,/100,derived
@@ -927,7 +927,7 @@ ZMB,Zambia,Africa,carbon,120,2024,gCO2/kWh,owid-energy
 ZMB,Zambia,Africa,co2pc,0.6,2024,t/yr,owid-co2
 ZMB,Zambia,Africa,energy,925,2024,kWh/yr,owid-energy
 ZMB,Zambia,Africa,forest,59.5,2023,% land,wb-forest
-ZMB,Zambia,Africa,pm25,24.3,2020,µg/m³,wb-pm25
+ZMB,Zambia,Africa,pm25,20.2,2023,µg/m³,wb-pm25
 ZMB,Zambia,Africa,climate,62,NA,/100,esgmap-curated
 ZMB,Zambia,Africa,ev,NA,NA,%,esgmap-curated
 ZMB,Zambia,Africa,score,83,NA,/100,derived
@@ -937,7 +937,7 @@ ZWE,Zimbabwe,Africa,carbon,384,2024,gCO2/kWh,owid-energy
 ZWE,Zimbabwe,Africa,co2pc,0.8,2024,t/yr,owid-co2
 ZWE,Zimbabwe,Africa,energy,617,2024,kWh/yr,owid-energy
 ZWE,Zimbabwe,Africa,forest,44.7,2023,% land,wb-forest
-ZWE,Zimbabwe,Africa,pm25,19.5,2020,µg/m³,wb-pm25
+ZWE,Zimbabwe,Africa,pm25,15,2023,µg/m³,wb-pm25
 ZWE,Zimbabwe,Africa,climate,66,NA,/100,esgmap-curated
 ZWE,Zimbabwe,Africa,ev,NA,NA,%,esgmap-curated
 ZWE,Zimbabwe,Africa,score,62,NA,/100,derived

@@ -1,7 +1,7 @@
 {
   "dataset": "ESGMap — Global Sustainability Atlas",
-  "version": "2025.bc8f6c8",
-  "generatedAt": "2026-06-09",
+  "version": "2025.5dd84cc",
+  "generatedAt": "2026-08-24",
   "license": "CC BY 4.0 (data); MIT (code)",
   "temporalCoverage": "2000–2025",
   "nullSemantics": "null / 'NA' means no upstream value — never fabricated, never 0.",
@@ -184,7 +184,7 @@
       "label": "Our World in Data — Energy",
       "url": "https://github.com/owid/energy-data",
       "license": "Creative Commons BY 4.0",
-      "retrievedAt": "2026-06-09",
+      "retrievedAt": "2026-08-24",
       "bytes": 9229369,
       "metrics": [
         "renewable",
@@ -199,7 +199,7 @@
       "label": "Our World in Data — CO₂ and Greenhouse Gas Emissions",
       "url": "https://github.com/owid/co2-data",
       "license": "Creative Commons BY 4.0",
-      "retrievedAt": "2026-06-09",
+      "retrievedAt": "2026-08-24",
       "bytes": 14377942,
       "metrics": [
         "co2pc"
@@ -210,8 +210,8 @@
       "label": "World Bank — Forest area (% of land), FAO FRA",
       "url": "https://data.worldbank.org/indicator/AG.LND.FRST.ZS",
       "license": "Creative Commons BY 4.0",
-      "retrievedAt": "2026-06-09",
-      "lastUpdated": "2026-04-08",
+      "retrievedAt": "2026-08-24",
+      "lastUpdated": "2026-07-13",
       "metrics": [
         "forest"
       ]
@@ -221,8 +221,8 @@
       "label": "World Bank — PM2.5 mean annual exposure (WHO / IHME)",
       "url": "https://data.worldbank.org/indicator/EN.ATM.PM25.MC.M3",
       "license": "Creative Commons BY 4.0",
-      "retrievedAt": "2026-06-09",
-      "lastUpdated": "2026-04-08",
+      "retrievedAt": "2026-08-24",
+      "lastUpdated": "2026-07-13",
       "metrics": [
         "pm25"
       ]
@@ -230,9 +230,9 @@
     {
       "id": "esgmap-curated",
       "label": "ESGMap curated policy layer — UNFCCC NDC Registry; Climate Watch (WRI); Net Zero Tracker (Oxford/ECIU); IFRS Foundation jurisdiction profiles; IEA Global EV Outlook; ND-GAIN Country Index",
-      "url": "https://github.com/",
+      "url": "https://github.com/MonarchCastleTech/esgmap/blob/master/scripts/country-meta.json",
       "license": "Compiled by ESGMap from cited public sources",
-      "retrievedAt": "2026-06-09",
+      "retrievedAt": "2026-08-24",
       "metrics": [
         "region",
         "capital",

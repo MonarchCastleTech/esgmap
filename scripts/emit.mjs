@@ -116,7 +116,7 @@ export function emitArtifacts(out, { root, SCORE_WEIGHTS, prev, prevChangelog })
   const enumProp = (vals) => ({ type: ["string", "null"], enum: [...vals, null] });
   writeFileSync(pub("schema", "countries.schema.json"), JSON.stringify({
     $schema: "https://json-schema.org/draft/2020-12/schema",
-    $id: "https://akgularda.github.io/esgmap/schema/countries.schema.json",
+    $id: "https://monarchcastletech.github.io/esgmap/schema/countries.schema.json",
     title: "ESGMap dataset",
     type: "object",
     required: ["meta", "countries"],
@@ -163,7 +163,7 @@ export function emitArtifacts(out, { root, SCORE_WEIGHTS, prev, prevChangelog })
   }
   writeFileSync(pub("api", "index.json"), JSON.stringify({
     dataset: "ESGMap", version: meta.version, generatedAt: meta.generatedAt, license: "CC BY 4.0",
-    base: "https://akgularda.github.io/esgmap/api/",
+    base: "https://monarchcastletech.github.io/esgmap/api/",
     endpoints: {
       countries: "../downloads/esgmap-wide.json",
       country: countries.map((c) => `country/${c.iso3}.json`),

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://akgularda.github.io/esgmap/schema/countries.schema.json",
+  "$id": "https://monarchcastletech.github.io/esgmap/schema/countries.schema.json",
   "title": "ESGMap dataset",
   "type": "object",
   "required": [

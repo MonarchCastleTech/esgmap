@@ -15,7 +15,7 @@ export function MapDataTable({ metric, year }: { metric: MetricKey; year: number
       <table>
         <caption>
           ESGMap data table — {M.label} ({M.unit}){M.hasHistory ? `, year ${year}` : ""}. {rows.length} territories.
-          Use the search box to open any country's full profile.
+          Observation vintage is included for each value; carried-forward values are labelled. Use the search box to open any country's full profile.
         </caption>
         <thead>
           <tr><th scope="col">Country</th><th scope="col">Region</th><th scope="col">{M.label} ({M.unit})</th></tr>
@@ -25,7 +25,7 @@ export function MapDataTable({ metric, year }: { metric: MetricKey; year: number
             <tr key={c.iso3}>
               <th scope="row">{c.name}</th>
               <td>{c.region}</td>
-              <td>{v == null ? "no data" : M.fmt(v)}</td>
+              <td>{v == null ? "no data" : `${M.fmt(v)} (${ESG.vintageAt(c, metric, year) ?? "vintage unavailable"})`}</td>
             </tr>
           ))}
         </tbody>

@@ -141,6 +141,20 @@ export function valueAt(
   return v == null ? null : (v as number);
 }
 
+/** Explain which upstream observation backs a displayed map value. */
+export function vintageAt(rec: CountryRecord | null, metricKey: MetricKey, year: number | null): string | null {
+  if (!rec) return null;
+  if ((metricKey === "renewable" || metricKey === "carbon") && rec.history && year != null) {
+    const i = Math.max(0, Math.min(rec.history.years.length - 1, year - YEAR_MIN));
+    if (rec.history[metricKey][i] == null) return null;
+    return rec.history.interpolated[metricKey][i]
+      ? `carried forward from ${rec.history.lastRealYear[metricKey] ?? "an earlier observation"}`
+      : `observed ${rec.history.years[i]}`;
+  }
+  const observedYear = rec.years?.[metricKey as keyof typeof rec.years];
+  return observedYear == null ? null : `observed ${observedYear}`;
+}
+
 const REGIONS: Region[] = ["Europe", "Asia", "Americas", "Africa", "Middle East", "Oceania", "Eurasia"];
 
 /** Average a history metric across the rich-tier members of each region, per year. */
@@ -165,6 +179,6 @@ export function regionalTrend(metricKey: "renewable" | "carbon"): RegionTrend[] 
 }
 
 export const ESG = {
-  META, all, byName, lookupByName, buildScales, METRICS, valueAt, regionalTrend,
+  META, all, byName, lookupByName, buildScales, METRICS, valueAt, vintageAt, regionalTrend,
   YEAR_MIN, YEAR_MAX, NO_DATA,
 };

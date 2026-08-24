@@ -281,6 +281,7 @@ export function WorldMap(props: WorldMapProps) {
 
   const tipRec = tip && tip.rec;
   const tipVal = tipRec ? ESG.valueAt(tipRec, metric, year) : null;
+  const tipVintage = tipRec ? ESG.vintageAt(tipRec, metric, year) : null;
   const M = ESG.METRICS[metric];
 
   return (
@@ -315,10 +316,13 @@ export function WorldMap(props: WorldMapProps) {
         }}>
           <div style={{ fontWeight: 600, fontSize: 13, marginBottom: tipRec ? 5 : 0 }}>{tipRec ? tipRec.name : tip.name}</div>
           {tipRec ? (
-            <div style={{ display: "flex", alignItems: "baseline", gap: 7 }}>
-              <span className="mono tnum" style={{ fontSize: 19, fontWeight: 600, color: tipVal != null ? scales[metric](tipVal) : "var(--text-3)" }}>{M.fmt(tipVal)}</span>
-              <span style={{ fontSize: 11, color: "var(--text-3)" }}>{M.unit !== "%" ? M.unit : ""} {M.short}</span>
-            </div>
+            <>
+              <div style={{ display: "flex", alignItems: "baseline", gap: 7 }}>
+                <span className="mono tnum" style={{ fontSize: 19, fontWeight: 600, color: tipVal != null ? scales[metric](tipVal) : "var(--text-3)" }}>{M.fmt(tipVal)}</span>
+                <span style={{ fontSize: 11, color: "var(--text-3)" }}>{M.unit !== "%" ? M.unit : ""} {M.short}</span>
+              </div>
+              {tipVintage && <div style={{ fontSize: 10.5, color: "var(--text-3)", marginTop: 3 }}>{tipVintage}</div>}
+            </>
           ) : (
             <div style={{ fontSize: 11, color: "var(--text-3)" }}>No coverage in dataset</div>
           )}

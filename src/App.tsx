@@ -100,7 +100,8 @@ export default function App() {
             <Icon name={activeLayer.icon} size={14} style={{ color: "var(--accent)" }} />
             <span style={{ fontWeight: 600 }}>{ESG.METRICS[metric].label}</span>
             <span style={{ color: "var(--text-3)" }}>·</span>
-            <span className="mono" style={{ color: "var(--text-3)" }}>{ESG.METRICS[metric].hasHistory ? year : ESG.YEAR_MAX}</span>
+            <span className="mono" title="Annual map values retain each country's true observation vintage" style={{ color: "var(--text-3)" }}>{ESG.METRICS[metric].hasHistory ? year : ESG.YEAR_MAX}</span>
+            <span style={{ color: "var(--text-3)", fontSize: 10.5 }}>vintages shown per country</span>
           </div>
           <button onClick={copyLink} title="Copy a permalink to this exact view" aria-label="Copy link to this view"
             style={{ display: "flex", alignItems: "center", gap: 6, height: 32, padding: "0 12px", borderRadius: 99, border: "1px solid var(--border)", background: "rgba(19,24,21,.86)", color: copied ? "var(--accent)" : "var(--text-2)", fontSize: 12, boxShadow: "var(--shadow)", backdropFilter: "blur(6px)" }}>
