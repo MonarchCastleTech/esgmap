@@ -22,10 +22,18 @@ export const NO_DATA = "#2c352d"; // matches the --no-data design-handoff token
 // Merge the near-real-time overlay (generated hourly by scripts/build-live.mjs,
 // baked into the deployed build). Absent/empty in normal local builds.
 const liveOverlay = liveRaw as unknown as LiveOverlay;
-for (const c of all) c.live = liveOverlay.countries[c.match] ?? null;
+const LIVE_MAX_AGE_MS = 6 * 60 * 60 * 1000;
+const liveCountries = Object.fromEntries(
+  Object.entries(liveOverlay.countries).filter(([, record]) => {
+    const observedAt = Date.parse(record.at);
+    const age = Date.now() - observedAt;
+    return Number.isFinite(observedAt) && age >= -15 * 60 * 1000 && age <= LIVE_MAX_AGE_MS;
+  }),
+);
+for (const c of all) c.live = liveCountries[c.match] ?? null;
 
-export const LIVE_GENERATED_AT = liveOverlay.generatedAt;
-export const LIVE_COUNT = Object.keys(liveOverlay.countries).length;
+export const LIVE_GENERATED_AT = Object.keys(liveCountries).length ? liveOverlay.generatedAt : null;
+export const LIVE_COUNT = Object.keys(liveCountries).length;
 
 /** matchName → record */
 export const byName: Record<string, CountryRecord> = {};

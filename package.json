@@ -12,6 +12,7 @@
     "typecheck": "tsc -b --noEmit",
     "build:data": "node scripts/build-data.mjs",
     "build:live": "node scripts/build-live.mjs",
+    "verify:data": "node scripts/verify-dataset.mjs",
     "build:meta": "node scripts/extract-meta.mjs"
   },
   "dependencies": {

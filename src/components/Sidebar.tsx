@@ -124,10 +124,7 @@ export function Sidebar({ view, setView, metric, setMetric, palette, setPalette 
         <div>Edition {ESG.YEAR_MAX} · {ESG.META.territories} territories</div>
         <div>Annual indicators and optional live overlays are dated separately.</div>
         <a href="https://github.com/MonarchCastleTech/esgmap/blob/master/DATA_SOURCES.md"
-          target="_blank" rel="noopener noreferrer">Source register · DATA_SOURCES.md</a>
-        <div style={{ marginTop: 2, fontFamily: "var(--mono)", fontSize: 9.5, opacity: 0.85 }} title={`content hash ${ESG.META.contentHash}`}>
-          v{ESG.META.version}{ESG.META.gitSha ? ` · ${ESG.META.gitSha}` : ""}
-        </div>
+          target="_blank" rel="noopener noreferrer">Sources and methodology</a>
       </div>
     </aside>
   );

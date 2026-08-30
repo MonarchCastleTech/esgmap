@@ -122,7 +122,7 @@ export function AboutOverlay({ onClose }: { onClose: () => void }) {
               <span style={{ width: 7, height: 7, borderRadius: 99, background: "var(--accent)", display: "inline-block" }} /> Near-real-time layer
             </span>
             <div style={{ marginTop: 5 }}>
-              {ESG.LIVE_COUNT} countries carry a <b>live</b> renewable-share and grid-carbon reading from their national grid operator (UK NESO, U.S. EIA, ENTSO-E), refreshed hourly. A snapshot, not an annual average; carbon is measured for the UK and estimated (“~”) elsewhere.
+              {ESG.LIVE_COUNT} countries carry a current renewable-share and grid-carbon reading from their national grid operator (UK NESO, U.S. EIA, ENTSO-E). Refreshes run hourly; readings older than six hours automatically fall back to the annual indicator. Carbon is measured for the UK and estimated (“~”) elsewhere.
             </div>
           </div>
         )}
@@ -144,16 +144,11 @@ export function AboutOverlay({ onClose }: { onClose: () => void }) {
           <Icon name={copied === "attr" ? "check" : "doc"} size={13} />{copied === "attr" ? "Attribution copied" : "Copy full attribution block"}
         </button>
 
-        {/* ---- Build provenance ---- */}
-        <SectionHead>Build provenance &amp; reproducibility</SectionHead>
+        {/* ---- Reproducibility ---- */}
+        <SectionHead>Reproducibility</SectionHead>
         <div style={{ fontSize: 12.5 }}>
-          This edition was generated on <b>{fmtDate(generatedAt)}</b> from the cited feeds by <span className="mono">scripts/build-data.mjs</span>.
-          <div className="mono" style={{ marginTop: 6, fontSize: 11.5, color: "var(--text-3)", lineHeight: 1.7 }}>
-            version &nbsp;<span style={{ color: "var(--text-2)" }}>{M.version}</span><br />
-            content&nbsp;hash &nbsp;<span style={{ color: "var(--text-2)" }}>{M.contentHash.slice(0, 24)}…</span><br />
-            {M.gitSha && <>git &nbsp;<span style={{ color: "var(--text-2)" }}>{M.gitSha}</span> · node {M.nodeVersion}<br /></>}
-          </div>
-          Re-running <span className="mono">npm run build:data</span> re-fetches the feeds; the content hash verifies an identical edition.
+          This edition was generated on <b>{fmtDate(generatedAt)}</b> from the cited public feeds with deterministic transformations and scoring rules.
+          Re-running <span className="mono">npm run build:data</span> rebuilds the dataset; <span className="mono">npm run verify:data</span> checks coverage, source provenance, freshness, and the edition checksum.
         </div>
       </div>
     </OverlayCard>

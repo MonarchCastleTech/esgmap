@@ -214,6 +214,10 @@ async function main() {
     }
   } else console.log("• ENTSO-E skipped (no ENTSOE_TOKEN)");
 
+  if (!Object.keys(live).length) {
+    throw new Error("no current grid source returned data; preserving the last deployed overlay");
+  }
+
   const out = {
     generatedAt: new Date().toISOString(),
     countries: live,

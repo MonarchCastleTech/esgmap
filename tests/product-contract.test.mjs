@@ -65,9 +65,23 @@ test("visible source and freshness status identifies the edition without oversta
   assert.match(sidebar, /aria-live="polite"/);
   assert.ok(sidebar.includes("Dataset updated"));
   assert.ok(sidebar.includes("Edition"));
-  assert.match(sidebar, /DATA_SOURCES\.md/);
-  assert.ok(sidebar.includes("Source register"));
+  assert.ok(sidebar.includes("Sources and methodology"));
+  assert.ok(!sidebar.includes("Source register · DATA_SOURCES.md"));
+  assert.ok(!sidebar.includes("META.gitSha"));
+  assert.ok(!sidebar.includes("META.contentHash"));
   assert.ok(sidebar.includes("Annual indicators and optional live overlays are dated separately."));
+});
+
+test("automated refreshes verify fallbacks and never publish an empty live overlay", () => {
+  const liveBuilder = read("scripts/build-live.mjs");
+  const verifier = read("scripts/verify-dataset.mjs");
+  assert.ok(!workflow.includes("|| echo"));
+  assert.match(workflow, /npm run verify:data/);
+  assert.match(workflow, /npm test/);
+  assert.match(liveBuilder, /no current grid source returned data/);
+  assert.match(verifier, /45-day safety window/);
+  assert.match(verifier, /createHash\("sha256"\)/);
+  assert.match(verifier, /meta\.territories !== countries\.length/);
 });
 
 test("public interface contains no prohibited accuracy, authority, or advice claims", () => {

@@ -39,17 +39,28 @@ jobs:
       # deploy is freshly dated. Falls back to the committed src/data/countries.json
       # if a source is unreachable in CI. (Skipped on the hourly schedule — the
       # annual data doesn't change that often.)
-      - name: Refresh annual data (best-effort)
+      - name: Refresh annual data with verified fallback
         if: github.event_name != 'schedule'
-        run: npm run build:data || echo "annual data refresh skipped — using committed dataset"
+        run: |
+          if npm run build:data; then
+            echo "annual dataset refreshed"
+          else
+            echo "::warning::Annual sources unavailable; validating the committed last-known-good dataset"
+          fi
+
+      - name: Verify annual dataset
+        run: npm run verify:data
 
       # Near-real-time overlay (UK works with no token; US/EU activate when the
       # EIA_KEY / ENTSOE_TOKEN secrets are set). Baked into the build, not committed.
-      - name: Refresh live data (best-effort)
+      - name: Refresh live data
         env:
           EIA_KEY: ${{ secrets.EIA_KEY }}
           ENTSOE_TOKEN: ${{ secrets.ENTSOE_TOKEN }}
-        run: npm run build:live || echo "live refresh skipped — empty overlay"
+        run: npm run build:live
+
+      - name: Test product contracts
+        run: npm test
 
       - name: Build
         run: npm run build
