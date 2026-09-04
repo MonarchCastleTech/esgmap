@@ -32,10 +32,26 @@ const ENTSOE_STORAGE = new Set(["B10", "B25"]);
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
 
-async function fetchText(url, opts = {}) {
-  const res = await fetch(url, { headers: { "user-agent": "esgmap-live/1.0" }, ...opts });
-  if (!res.ok) throw new Error(`HTTP ${res.status} for ${url.split("?")[0]}`);
-  return await res.text();
+async function fetchText(url, opts = {}, retries = 2) {
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      const res = await fetch(url, { headers: { "user-agent": "esgmap-live/1.0" }, ...opts });
+      if (!res.ok) {
+        if (attempt < retries && res.status >= 500) {
+          await new Promise((r) => setTimeout(r, 1000 * (attempt + 1)));
+          continue;
+        }
+        throw new Error(`HTTP ${res.status} for ${url.split("?")[0]}`);
+      }
+      return await res.text();
+    } catch (err) {
+      if (attempt < retries && (err.message.startsWith("HTTP 5") || err.name === "TypeError")) {
+        await new Promise((r) => setTimeout(r, 1000 * (attempt + 1)));
+        continue;
+      }
+      throw err;
+    }
+  }
 }
 const round1 = (v) => Math.round(v * 10) / 10;
 const clampPct = (v) => Math.max(0, Math.min(100, v));

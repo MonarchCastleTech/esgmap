@@ -57,7 +57,12 @@ jobs:
         env:
           EIA_KEY: ${{ secrets.EIA_KEY }}
           ENTSOE_TOKEN: ${{ secrets.ENTSOE_TOKEN }}
-        run: npm run build:live
+        run: |
+          if npm run build:live; then
+            echo "live overlay refreshed"
+          else
+            echo "::warning::Live grid sources unavailable; preserving the committed last-known-good overlay"
+          fi
 
       - name: Test product contracts
         run: npm test
