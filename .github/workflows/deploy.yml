@@ -35,14 +35,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Optional: regenerate the annual dataset from the open-data feeds so each
-      # deploy is freshly dated. Falls back to the committed src/data/countries.json
-      # if a source is unreachable in CI. (Skipped on the hourly schedule — the
-      # annual data doesn't change that often.)
+      # Refresh on manual/push deploys, or when a scheduled build's committed
+      # snapshot has aged beyond the verification window. The separate verify
+      # step still rejects stale or incomplete data if refresh fails.
       - name: Refresh annual data with verified fallback
-        if: github.event_name != 'schedule'
         run: |
-          if npm run build:data; then
+          if [ "$GITHUB_EVENT_NAME" = "schedule" ] && npm run verify:data; then
+            echo "committed annual dataset remains within its safety window"
+          elif npm run build:data; then
             echo "annual dataset refreshed"
           else
             echo "::warning::Annual sources unavailable; validating the committed last-known-good dataset"

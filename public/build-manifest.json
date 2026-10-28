@@ -1,10 +1,10 @@
 {
   "dataset": "ESGMap",
-  "version": "2025.5dd84cc",
-  "contentHash": "5dd84ccbe10250496466dfb8798b19aa9a13bae50670c6ad08ed5da13c764373",
-  "gitSha": "14a59ab",
+  "version": "2025.946632f",
+  "contentHash": "946632f045fe6ce3e2cb68b369be28e2b5f5a5036220cf8f1cc806f8cd7abb7b",
+  "gitSha": "11ea27c",
   "nodeVersion": "v24.11.0",
-  "generatedAt": "2026-08-24",
+  "generatedAt": "2026-10-28",
   "yearMin": 2000,
   "yearMax": 2025,
   "territories": 94,
@@ -31,35 +31,35 @@
       "id": "owid-energy",
       "label": "Our World in Data — Energy",
       "url": "https://github.com/owid/energy-data",
-      "retrievedAt": "2026-08-24",
+      "retrievedAt": "2026-10-28",
       "license": "Creative Commons BY 4.0"
     },
     {
       "id": "owid-co2",
       "label": "Our World in Data — CO₂ and Greenhouse Gas Emissions",
       "url": "https://github.com/owid/co2-data",
-      "retrievedAt": "2026-08-24",
+      "retrievedAt": "2026-10-28",
       "license": "Creative Commons BY 4.0"
     },
     {
       "id": "wb-forest",
       "label": "World Bank — Forest area (% of land), FAO FRA",
       "url": "https://data.worldbank.org/indicator/AG.LND.FRST.ZS",
-      "retrievedAt": "2026-08-24",
+      "retrievedAt": "2026-10-28",
       "license": "Creative Commons BY 4.0"
     },
     {
       "id": "wb-pm25",
       "label": "World Bank — PM2.5 mean annual exposure (WHO / IHME)",
       "url": "https://data.worldbank.org/indicator/EN.ATM.PM25.MC.M3",
-      "retrievedAt": "2026-08-24",
+      "retrievedAt": "2026-10-28",
       "license": "Creative Commons BY 4.0"
     },
     {
       "id": "esgmap-curated",
       "label": "ESGMap curated policy layer — UNFCCC NDC Registry; Climate Watch (WRI); Net Zero Tracker (Oxford/ECIU); IFRS Foundation jurisdiction profiles; IEA Global EV Outlook; ND-GAIN Country Index",
       "url": "https://github.com/MonarchCastleTech/esgmap/blob/master/scripts/country-meta.json",
-      "retrievedAt": "2026-08-24",
+      "retrievedAt": "2026-10-28",
       "license": "Compiled by ESGMap from cited public sources"
     }
   ],

@@ -1,7 +1,7 @@
 {
   "dataset": "ESGMap",
-  "version": "2025.5dd84cc",
-  "generatedAt": "2026-08-24",
+  "version": "2025.946632f",
+  "generatedAt": "2026-10-28",
   "license": "CC BY 4.0",
   "base": "https://monarchcastletech.github.io/esgmap/api/",
   "endpoints": {
